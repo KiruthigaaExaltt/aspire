@@ -453,7 +453,7 @@ export function ClientPage({ onNavigate }: ClientPageProps) {
       {/* Hero Section with Parallax */}
       <motion.section
         ref={heroRef}
-        className="relative flex min-h-[500px] lg:h-screen items-start lg:items-center justify-center overflow-hidden pt-24 pb-8 sm:pt-32 sm:pb-12 md:pt-36 md:pb-16 lg:pt-40 lg:pb-20"
+        className="relative flex min-h-[500px] lg:min-h-[700px] xl:h-screen items-start lg:items-center justify-center overflow-hidden pt-24 pb-8 sm:pt-32 sm:pb-12 md:pt-36 md:pb-16 lg:pt-40 lg:pb-20"
         style={{ y, opacity }}
       >
         {/* Hero Background with Gradients */}
@@ -476,7 +476,7 @@ export function ClientPage({ onNavigate }: ClientPageProps) {
           <Hexagon className="text-primary/10 h-full w-full" />
         </motion.div>
 
-        <div className="relative z-10 mx-auto max-w-[1550px] px-4 py-10">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 py-10">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             {/* Left Content */}
             <motion.div
@@ -510,7 +510,7 @@ export function ClientPage({ onNavigate }: ClientPageProps) {
               </motion.div>
 
               <motion.h1
-                className="mb-6 text-3xl font-bold sm:text-5xl md:text-6xl lg:text-7xl"
+                className="mb-6 text-3xl font-bold sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl"
                 initial={{ opacity: 0, y: 50 }}
                 animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 1, delay: 0.4 }}
@@ -735,7 +735,7 @@ export function ClientPage({ onNavigate }: ClientPageProps) {
       <section className="relative overflow-hidden py-20">
         <div className="from-accent/5 to-primary/5 absolute inset-0 bg-gradient-to-br via-white"></div>
 
-        <div className="relative z-10 mx-auto max-w-[1550px] px-4">
+        <div className="relative z-10 mx-auto max-w-7xl px-4">
           {/* Section Header */}
           <motion.div
             className="mb-16 text-center"
@@ -1087,7 +1087,7 @@ export function ClientPage({ onNavigate }: ClientPageProps) {
         <div className="bg-primary/5 absolute right-10 bottom-20 h-80 w-80 rounded-full blur-3xl"></div>
       </section>
 
-      <div className="relative mx-auto max-w-[1550px] px-4 py-16">
+      <div className="relative mx-auto max-w-7xl px-4 py-16">
         {/* Interactive Client Network */}
         <section className="mb-20">
           <motion.div
@@ -1109,7 +1109,7 @@ export function ClientPage({ onNavigate }: ClientPageProps) {
           {/* Interactive Map Visualization */}
           <motion.div
             ref={mapRef}
-            className="from-primary/5 to-accent/5 relative mb-12 overflow-hidden rounded-3xl bg-gradient-to-br p-8"
+            className="from-primary/5 to-accent/5 relative mb-12 overflow-hidden rounded-3xl bg-gradient-to-br p-4 sm:p-8"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isMapInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 1 }}
@@ -1298,7 +1298,7 @@ export function ClientPage({ onNavigate }: ClientPageProps) {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {sectors.map((sector, index) => (
               <motion.div
                 key={index}
@@ -1405,7 +1405,7 @@ export function ClientPage({ onNavigate }: ClientPageProps) {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Card className="overflow-hidden shadow-2xl">
+            <Card className="overflow-hidden shadow-2xl border-[#0000001a]">
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 {/* Image Section */}
                 <div className="relative aspect-video lg:aspect-auto">
@@ -1437,7 +1437,7 @@ export function ClientPage({ onNavigate }: ClientPageProps) {
                 </div>
 
                 {/* Content Section */}
-                <CardContent className="p-8 lg:p-12">
+                <CardContent className="p-6 md:p-8 lg:p-12">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -1724,7 +1724,7 @@ export function ClientPage({ onNavigate }: ClientPageProps) {
             </p>
           </motion.div>
 
-          <div className="relative grid grid-cols-1 gap-6 md:grid-cols-5">
+          <div className="relative grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5">
             {processSteps.map((step, index) => (
               <motion.div
                 key={index}
@@ -1734,7 +1734,7 @@ export function ClientPage({ onNavigate }: ClientPageProps) {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="group relative overflow-hidden text-center transition-all duration-500 hover:-translate-y-4 hover:shadow-xl">
+                <Card className="group relative overflow-hidden text-center transition-all duration-500 hover:-translate-y-4 hover:shadow-xl border-[#0000001a]">
                   {/* Animated background */}
                   <div className="from-accent/5 to-primary/5 absolute inset-0 bg-gradient-to-br opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
 
@@ -1827,7 +1827,7 @@ export function ClientPage({ onNavigate }: ClientPageProps) {
                 <div className="absolute bottom-0 left-0 h-64 w-64 -translate-x-32 translate-y-32 rounded-full bg-white"></div>
               </div>
 
-              <CardContent className="relative z-10 p-8 md:p-12">
+              <CardContent className="relative z-10 p-6 md:p-12">
                 <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-3">
                   <div className="lg:col-span-2">
                     <motion.h2

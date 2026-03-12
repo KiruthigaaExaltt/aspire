@@ -233,7 +233,7 @@ export function GalleryPage() {
         {/* Blue themed overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/70 to-accent/60"></div>
 
-        <div className="max-w-[1550px] mx-auto px-4 py-12 text-center relative z-10">
+        <div className="max-w-7xl mx-auto px-4 py-12 text-center relative z-10">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Gallery</h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-6xl mx-auto">
             A visual look at our products, installations, and performance—right from the shop floor to your ring frames.
@@ -246,7 +246,7 @@ export function GalleryPage() {
         </div>
       </section>
 
-      <div className="max-w-[1550px] mx-auto px-4 py-16">
+      <div className="max-w-7xl mx-auto px-4 py-16">
         {/* Category Filters */}
         <div className="flex flex-wrap justify-center gap-2 mb-12">
           {categories.map((category) => (
@@ -264,11 +264,11 @@ export function GalleryPage() {
         </div>
 
         {/* Gallery Grid */}
-        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-16">
+        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-16 ">
           {filteredImages.map((image, index) => (
             <figure
               key={image.id}
-              className="group cursor-pointer rounded-2xl overflow-hidden border bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="group cursor-pointer rounded-2xl overflow-hidden border bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-[#0000001a]"
               onClick={() => setSelectedImage(index)}
             >
               <div className="relative overflow-hidden aspect-[4/3]">

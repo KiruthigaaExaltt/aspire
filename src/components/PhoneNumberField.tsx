@@ -42,7 +42,7 @@ export default function PhoneNumberField({
         defaultCountry="IN"
         value={value}
         onChange={(val) => onChange?.(val || "")}
-        className={`phone-input w-full rounded-md border bg-input-background px-3 h-9 font-['Inter'] text-base text-black outline-none transition-[color,box-shadow] placeholder:text-muted-foreground focus-within:border-ring focus-within:ring-ring/50 focus-within:ring-[3px] md:text-sm ${error ? "border-destructive ring-destructive/20" : "border-input"
+        className={`phone-input w-full rounded-lg bg-[#f4f4f6] border-0 px-3 h-10 font-['Inter'] text-sm text-black outline-none transition-[color,box-shadow] placeholder:text-muted-foreground focus-within:ring-ring/50 focus-within:ring-[3px] ${error ? "ring-destructive/20" : ""
           }`}
         placeholder="Your Phone number*"
       />

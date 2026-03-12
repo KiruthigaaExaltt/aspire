@@ -65,13 +65,13 @@ export function ContactPage() {
   ];
 
   return (
-    <div className="min-h-screen mt-16 md:mt-8 pt-24 pb-8 sm:pt-32 sm:pb-12 md:pt-36 md:pb-16 lg:py-10 px-4 max-w-[1550px] mx-auto" style={{ marginTop: '4em' }}>
+    <div className="min-h-screen py-16 px-4 max-w-7xl mx-auto">
       {/* Header */}
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">Contact Us</h1>
-        <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-          Get in touch with our expert team to discuss your textile manufacturing needs.
-          We're here to help you find the perfect solution for your business.
+        <h1 className="text-3xl md:text-5xl font-bold text-primary mb-4">Contact Us</h1>
+        <p className="text-lg md:text-lg text-gray-500 max-w-3xl mx-auto">
+          Get in touch with our expert team to discuss your textile manufacturing needs. We're
+          here to help you find the perfect solution for your business.
         </p>
       </div>
 
@@ -79,15 +79,15 @@ export function ContactPage() {
       <section className="mb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-2xl text-primary">Send Us a Message</CardTitle>
+          <Card className="rounded-2xl border-gray-100 shadow-sm">
+            <CardHeader className="pb-4">
+              <CardTitle className="text-xl font-normal text-primary">Send Us a Message</CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="name" className="block text-xs font-semibold text-gray-700 mb-2">
                       Full Name *
                     </label>
                     <Input
@@ -98,10 +98,11 @@ export function ContactPage() {
                       value={formData.name}
                       onChange={handleInputChange}
                       placeholder="Enter your full name"
+                      className="h-10 bg-[#f4f4f6] border-0 rounded-lg text-sm"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="email" className="block text-xs font-semibold text-gray-700 mb-2">
                       Email Address *
                     </label>
                     <Input
@@ -112,13 +113,14 @@ export function ContactPage() {
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="Enter your email"
+                      className="h-10 bg-[#f4f4f6] border-0 rounded-lg text-sm"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="company" className="block text-xs font-semibold text-gray-700 mb-2">
                       Company Name
                     </label>
                     <Input
@@ -128,10 +130,11 @@ export function ContactPage() {
                       value={formData.company}
                       onChange={handleInputChange}
                       placeholder="Enter your company name"
+                      className="h-10 bg-[#f4f4f6] border-0 rounded-lg text-sm"
                     />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="phone" className="block text-xs font-semibold text-gray-700 mb-2">
                       Phone Number
                     </label>
                     <PhoneNumberField
@@ -143,7 +146,7 @@ export function ContactPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="subject" className="block text-xs font-semibold text-gray-700 mb-2">
                     Subject *
                   </label>
                   <Input
@@ -154,25 +157,27 @@ export function ContactPage() {
                     value={formData.subject}
                     onChange={handleInputChange}
                     placeholder="Enter the subject"
+                    className="h-10 bg-[#f4f4f6] border-0 rounded-lg text-sm"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="message" className="block text-xs font-semibold text-gray-700 mb-2">
                     Message *
                   </label>
                   <Textarea
                     id="message"
                     name="message"
                     required
-                    rows={6}
+                    rows={4}
                     value={formData.message}
                     onChange={handleInputChange}
                     placeholder="Tell us about your requirements, questions, or how we can help you..."
+                    className="bg-[#f4f4f6] border-0 rounded-lg text-sm resize-none"
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90">
+                <Button type="submit" size="lg" className="w-full bg-[#202058] hover:bg-[#202058]/90 text-white rounded-lg h-10">
                   Send Message
                 </Button>
               </form>
@@ -181,49 +186,49 @@ export function ContactPage() {
 
           {/* Quick Contact Info */}
           <div className="space-y-6">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-xl text-primary">Quick Contact</CardTitle>
+            <Card className="rounded-2xl border-gray-100 shadow-sm">
+              <CardHeader className="pb-4">
+                <CardTitle className="text-sm font-normal text-primary">Quick Contact</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-6">
                 <a href="tel:+919087102929" className="flex items-start space-x-3 transition-colors cursor-pointer group">
-                  <Phone className="h-5 w-5 text-accent mt-1 group-hover:scale-110 transition-transform" />
-                  <div>
-                    <p className="font-medium">Primary Contact</p>
-                    <p className="text-gray-600 group-hover:text-primary transition-colors">+91 90871 02929</p>
-                    <p className="text-sm text-gray-500">Mon-Fri: 9:00 AM - 6:00 PM</p>
+                  <Phone className="h-4 w-4 text-accent mt-0.5" strokeWidth={1.5} />
+                  <div className="leading-tight">
+                    <p className="font-semibold text-sm text-gray-900">Primary Contact</p>
+                    <p className="text-gray-500 text-sm mt-0.5">+91 90871 02929</p>
+                    <p className="text-xs text-gray-400 mt-0.5">Mon-Fri: 9:00 AM - 6:00 PM</p>
                   </div>
                 </a>
 
                 <a href="mailto:aspiregrandexcel@gmail.com" className="flex items-start space-x-3 transition-colors cursor-pointer group">
-                  <Mail className="h-5 w-5 text-accent mt-1 group-hover:scale-110 transition-transform" />
-                  <div>
-                    <p className="font-medium">Email</p>
-                    <p className="text-gray-600 group-hover:text-primary transition-colors">aspiregrandexcel@gmail.com</p>
-                    <p className="text-sm text-gray-500">Response within 24 hours</p>
+                  <Mail className="h-4 w-4 text-accent mt-0.5" strokeWidth={1.5} />
+                  <div className="leading-tight">
+                    <p className="font-semibold text-sm text-gray-900">Email</p>
+                    <p className="text-gray-500 text-sm mt-0.5">aspiregrandexcel@gmail.com</p>
+                    <p className="text-xs text-gray-400 mt-0.5">Response within 24 hours</p>
                   </div>
                 </a>
 
                 <div className="flex items-start space-x-3">
-                  <Clock className="h-5 w-5 text-accent mt-1" />
-                  <div>
-                    <p className="font-medium">Business Hours</p>
-                    <p className="text-gray-600">Monday - Friday</p>
-                    <p className="text-sm text-gray-500">9:00 AM - 6:00 PM (IST)</p>
+                  <Clock className="h-4 w-4 text-accent mt-0.5" strokeWidth={1.5} />
+                  <div className="leading-tight">
+                    <p className="font-semibold text-sm text-gray-900">Business Hours</p>
+                    <p className="text-gray-500 text-sm mt-0.5">Monday - Friday</p>
+                    <p className="text-xs text-gray-400 mt-0.5">9:00 AM - 6:00 PM (IST)</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-to-br from-primary to-primary/80 text-white">
+            <Card className="bg-[#2b2b5f] text-white rounded-2xl border-0">
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4">Need Immediate Assistance?</h3>
-                <p className="mb-4">
+                <h3 className="text-base font-bold mb-3">Need Immediate Assistance?</h3>
+                <p className="mb-5 text-sm leading-relaxed text-gray-200">
                   Contact our technical support team during business hours for
                   machinery issues, service requests, and technical guidance.
                 </p>
                 <a href="tel:+919087102929">
-                  <Button className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                  <Button className="bg-[#f1a43a] hover:bg-[#f1a43a]/90 text-white border-0 rounded-lg h-9 px-6 text-sm">
                     Call Support
                   </Button>
                 </a>
