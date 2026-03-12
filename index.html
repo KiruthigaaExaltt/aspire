@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✅ Preconnect & DNS Prefetch for faster first-byte -->
+  <link rel="preconnect" href="https://aspireexcel.com" crossorigin />
+  <link rel="dns-prefetch" href="https://aspireexcel.com" />
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <link rel="preconnect" href="https://www.clarity.ms" />
+
+  <!-- SEO & Social Meta Placeholders -->
+  <title>__TITLE_PLACEHOLDER__</title>
+  <meta name="description" content="__DESCRIPTION_PLACEHOLDER__" />
+  <meta name="keywords" content="__KEYWORDS_PLACEHOLDER__" />
+  <meta property="og:title" content="__OG_TITLE_PLACEHOLDER__" />
+  <meta property="og:description" content="__OG_DESCRIPTION_PLACEHOLDER__" />
+  <meta property="og:url" content="__OG_URL_PLACEHOLDER__" />
+  <meta property="og:image" content="__OG_IMAGE_PLACEHOLDER__" />
+  <meta property="og:image:alt" content="__OG_IMAGE_ALT_PLACEHOLDER__" />
+  <meta name="twitter:title" content="__OG_TITLE_PLACEHOLDER__" />
+  <meta name="twitter:description" content="__OG_DESCRIPTION_PLACEHOLDER__" />
+  <meta name="twitter:image" content="__OG_IMAGE_PLACEHOLDER__" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="__CANONICAL_PLACEHOLDER__" />
+
+  <!-- ✅ Injected production scripts (GA + Clarity) -->
+  <%- prodScripts %>
+</head>
+
+<body>
+  <h1 class="sr-only">__H1_PLACEHOLDER__</h1>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>

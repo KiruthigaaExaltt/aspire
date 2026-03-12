@@ -1,0 +1,300 @@
+import { useState } from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { Button } from './ui/button';
+import { Input } from './ui/input';
+import { Textarea } from './ui/textarea';
+import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import PhoneNumberField from './PhoneNumberField';
+
+export function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
+  const [phoneError, setPhoneError] = useState<string | null>(null);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handlePhoneChange = (value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      phone: value
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (phoneError) {
+      alert('Please fix the errors in the form before submitting.');
+      return;
+    }
+
+    // Handle form submission here
+    console.log('Form submitted:', formData);
+    alert('Thank you for your message! We will get back to you soon.');
+    setFormData({
+      name: '',
+      email: '',
+      company: '',
+      phone: '',
+      subject: '',
+      message: ''
+    });
+  };
+
+  const offices = [
+    {
+      name: "Head Office",
+      address: "111/109A, Civil Aerodrome Road, SIHS Colony, Singanallur, Coimbatore‑641014",
+      phone: "+91 90871 02929",
+      phone2: "",
+      email: "aspiregrandexcel@gmail.com",
+      hours: "Mon-Fri: 9:00 AM - 6:00 PM"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen mt-16 md:mt-8 pt-24 pb-8 sm:pt-32 sm:pb-12 md:pt-36 md:pb-16 lg:py-10 px-4 max-w-[1550px] mx-auto" style={{ marginTop: '4em' }}>
+      {/* Header */}
+      <div className="text-center mb-16">
+        <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">Contact Us</h1>
+        <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+          Get in touch with our expert team to discuss your textile manufacturing needs.
+          We're here to help you find the perfect solution for your business.
+        </p>
+      </div>
+
+      {/* Contact Form and Info */}
+      <section className="mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Contact Form */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-2xl text-primary">Send Us a Message</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                      Full Name *
+                    </label>
+                    <Input
+                      id="name"
+                      name="name"
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      placeholder="Enter your full name"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      Email Address *
+                    </label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="Enter your email"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+                      Company Name
+                    </label>
+                    <Input
+                      id="company"
+                      name="company"
+                      type="text"
+                      value={formData.company}
+                      onChange={handleInputChange}
+                      placeholder="Enter your company name"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                      Phone Number
+                    </label>
+                    <PhoneNumberField
+                      value={formData.phone}
+                      onChange={handlePhoneChange}
+                      onError={setPhoneError}
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                    Subject *
+                  </label>
+                  <Input
+                    id="subject"
+                    name="subject"
+                    type="text"
+                    required
+                    value={formData.subject}
+                    onChange={handleInputChange}
+                    placeholder="Enter the subject"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    Message *
+                  </label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    required
+                    rows={6}
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    placeholder="Tell us about your requirements, questions, or how we can help you..."
+                  />
+                </div>
+
+                <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90">
+                  Send Message
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+
+          {/* Quick Contact Info */}
+          <div className="space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-xl text-primary">Quick Contact</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <a href="tel:+919087102929" className="flex items-start space-x-3 transition-colors cursor-pointer group">
+                  <Phone className="h-5 w-5 text-accent mt-1 group-hover:scale-110 transition-transform" />
+                  <div>
+                    <p className="font-medium">Primary Contact</p>
+                    <p className="text-gray-600 group-hover:text-primary transition-colors">+91 90871 02929</p>
+                    <p className="text-sm text-gray-500">Mon-Fri: 9:00 AM - 6:00 PM</p>
+                  </div>
+                </a>
+
+                <a href="mailto:aspiregrandexcel@gmail.com" className="flex items-start space-x-3 transition-colors cursor-pointer group">
+                  <Mail className="h-5 w-5 text-accent mt-1 group-hover:scale-110 transition-transform" />
+                  <div>
+                    <p className="font-medium">Email</p>
+                    <p className="text-gray-600 group-hover:text-primary transition-colors">aspiregrandexcel@gmail.com</p>
+                    <p className="text-sm text-gray-500">Response within 24 hours</p>
+                  </div>
+                </a>
+
+                <div className="flex items-start space-x-3">
+                  <Clock className="h-5 w-5 text-accent mt-1" />
+                  <div>
+                    <p className="font-medium">Business Hours</p>
+                    <p className="text-gray-600">Monday - Friday</p>
+                    <p className="text-sm text-gray-500">9:00 AM - 6:00 PM (IST)</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gradient-to-br from-primary to-primary/80 text-white">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold mb-4">Need Immediate Assistance?</h3>
+                <p className="mb-4">
+                  Contact our technical support team during business hours for
+                  machinery issues, service requests, and technical guidance.
+                </p>
+                <a href="tel:+919087102929">
+                  <Button className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                    Call Support
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Office Location & Map */}
+      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-50 via-orange-50 to-amber-50 p-8 md:p-12 mb-6 sm:mb-8 md:mb-20">
+        {/* Decorative animated elements */}
+        <div className="absolute top-10 right-10 w-64 h-64 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-10 left-10 w-72 h-72 bg-gradient-to-br from-accent/20 to-orange-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl"></div>
+
+        <div className="relative z-10">
+          <h2 className="text-3xl font-bold text-primary text-center mb-12">Our Office Location</h2>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            {/* Office Information */}
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader className="pb-3">
+                <CardTitle className="text-xl text-primary flex items-center">
+                  <MapPin className="h-5 w-5 text-accent mr-2" />
+                  {offices[0].name}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4 pt-3">
+                <a href="https://maps.app.goo.gl/2vZaKTHTMZdUWAeV6" target="_blank" rel="noopener noreferrer" className="text-gray-600 leading-relaxed hover:text-primary transition-colors cursor-pointer block">
+                  {offices[0].address}
+                </a>
+
+                <div className="flex items-center space-x-2">
+                  <Clock className="h-4 w-4 text-accent" />
+                  <span className="text-gray-600">{offices[0].hours}</span>
+                </div>
+
+                <Button
+                  className="w-full bg-primary hover:bg-primary/90"
+                  onClick={() => window.open('https://maps.app.goo.gl/2vZaKTHTMZdUWAeV6', '_blank', 'noopener,noreferrer')}
+                >
+                  Get Directions
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Google Maps */}
+            <Card className="overflow-hidden">
+              <CardContent className="p-0">
+                <div className="relative h-80 w-full">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.1449574147833!2d76.91844597474586!3d10.991591855535085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85b2da5555555%3A0x3ba85b2da5555555!2sCivil%20Aerodrome%20Road%2C%20SIHS%20Colony%2C%20Singanallur%2C%20Coimbatore%2C%20Tamil%20Nadu%20641014!5e0!3m2!1sen!2sin!4v1735046400000!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen={true}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Aspire Grand Excel Office Location"
+                    className="absolute inset-0"
+                  />
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Location Highlights */}
+
+        </div>
+      </section>
+    </div>
+  );
+}

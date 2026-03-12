@@ -1,0 +1,230 @@
+[
+  {
+    "id": "home",
+    "title": "Aspire Grand Excel Automation",
+    "status": "published",
+    "meta_title": "Aspire Grand Excel Automation | Spinning Automation Solutions",
+    "meta_description": "Aspire Grand Excel Automation provides innovative spinning automation solutions including auto doffer retrofit, compact spinning technology, bobbin transport systems and textile automation.",
+    "meta_keywords": [
+      "spinning automation",
+      "textile automation",
+      "auto doffer retrofit",
+      "compact spinning technology",
+      "bobbin transport system",
+      "textile machinery automation",
+      "aspire grand excel automation",
+      "spinning mill automation",
+      "textile engineering solutions"
+    ],
+    "og_image": "/images/home-og.jpg",
+    "priority": "1.0",
+    "canonical_link": "https://aspireexcel.com/",
+    "slug": "/",
+    "created_at": "2026-03-07",
+    "updated_at": "2026-03-07"
+  },
+  {
+    "id": "about",
+    "title": "About Aspire Grand Excel Automation",
+    "status": "published",
+    "meta_title": "About Aspire Grand Excel Automation | Textile Automation Experts",
+    "meta_description": "Learn about Aspire Grand Excel Automation, a Coimbatore-based engineering company specializing in spinning automation, doffing machines, bobbin handling, compacting, and cone packing solutions for modern textile mills.",
+    "meta_keywords": [
+      "about aspire excel",
+      "textile automation company",
+      "spinning automation experts",
+      "textile engineering coimbatore",
+      "aspire automation technologies",
+      "doffing machine manufacturers",
+      "textile industry automation"
+    ],
+    "og_image": "/images/about-og.jpg",
+    "priority": "0.8",
+    "canonical_link": "https://aspireexcel.com/about/",
+    "slug": "/about/",
+    "created_at": "2026-03-07",
+    "updated_at": "2026-03-07"
+  },
+  {
+    "id": "products",
+    "title": "Products - Textile Machinery & Automation",
+    "status": "published",
+    "meta_title": "Products | Textile Machinery & Automation Solutions",
+    "meta_description": "Explore our complete range of spinning automation products: Auto Doffer Retrofit, EXCELspin Compact, Bobbin Transport System, Autocone Packing System, and Auto Parking System.",
+    "meta_keywords": [
+      "textile automation products",
+      "spinning automation machinery",
+      "auto doffer retrofit",
+      "compact spinning system",
+      "bobbin transport",
+      "autocone packing",
+      "auto parking system"
+    ],
+    "og_image": "/images/products-og.jpg",
+    "priority": "0.9",
+    "canonical_link": "https://aspireexcel.com/products/",
+    "slug": "/products/",
+    "created_at": "2026-03-07",
+    "updated_at": "2026-03-07"
+  },
+  {
+    "id": "auto-doffer-retrofit",
+    "title": "Auto Doffer Retrofit",
+    "status": "published",
+    "meta_title": "Auto Doffer Retrofit | Spinning Automation System",
+    "meta_description": "Retrofit your existing ring frames with the Aspire Excel Auto Doffer system for fully automated doffing, reduced labor costs and improved efficiency in spinning mills.",
+    "meta_keywords": [
+      "auto doffer retrofit",
+      "doffing machine automation",
+      "ring frame automation",
+      "spinning mill automation system",
+      "textile doffing solution",
+      "aspire auto doffer"
+    ],
+    "og_image": "/images/products/auto-doffer-retrofit.jpg",
+    "priority": "0.8",
+    "canonical_link": "https://aspireexcel.com/products/auto-doffer/",
+    "slug": "/products/auto-doffer/",
+    "created_at": "2026-03-07",
+    "updated_at": "2026-03-07"
+  },
+  {
+    "id": "excelspin-compact",
+    "title": "EXCELspin Compact",
+    "status": "published",
+    "meta_title": "EXCELspin Compact | Compact Spinning Technology",
+    "meta_description": "EXCELspin Compact by Aspire Excel improves yarn quality through compact spinning technology with lattice apron and perforated drum systems.",
+    "meta_keywords": [
+      "compact spinning system",
+      "excelspin compact",
+      "compact yarn technology",
+      "spinning mill compact system",
+      "yarn quality improvement",
+      "textile spinning technology"
+    ],
+    "og_image": "/images/products/excelspin-compact.jpg",
+    "priority": "0.8",
+    "canonical_link": "https://aspireexcel.com/products/excelspin/",
+    "slug": "/products/excelspin/",
+    "created_at": "2026-03-07",
+    "updated_at": "2026-03-07"
+  },
+  {
+    "id": "bobbin-transport-system",
+    "title": "Bobbin Transport System",
+    "status": "published",
+    "meta_title": "Bobbin Transport System | Automated Bobbin Handling",
+    "meta_description": "Automate bobbin logistics between blow room and ring frames with the Aspire Excel Bobbin Transport System for optimized workflow and reduced manual handling.",
+    "meta_keywords": [
+      "bobbin transport system",
+      "bobbin handling automation",
+      "textile bobbin automation",
+      "spinning mill bobbin transport",
+      "automated bobbin system"
+    ],
+    "og_image": "/images/products/bobbin-transport-system.jpg",
+    "priority": "0.8",
+    "canonical_link": "https://aspireexcel.com/products/bobbin-transport/",
+    "slug": "/products/bobbin-transport/",
+    "created_at": "2026-03-07",
+    "updated_at": "2026-03-07"
+  },
+  {
+    "id": "autocone-packing-system",
+    "title": "Autocone Packing System",
+    "status": "published",
+    "meta_title": "Autocone Packing System | Automated Cone Packing",
+    "meta_description": "Fully automated cone packing system by Aspire Excel that saves 6 workers per shift with high-speed precision packaging for spinning mills.",
+    "meta_keywords": [
+      "autocone packing system",
+      "cone packing automation",
+      "textile cone packing machine",
+      "yarn packaging automation",
+      "spinning mill packing system"
+    ],
+    "og_image": "/images/products/autocone-packing-system.jpg",
+    "priority": "0.8",
+    "canonical_link": "https://aspireexcel.com/products/autocone-packing/",
+    "slug": "/products/autocone-packing/",
+    "created_at": "2026-03-07",
+    "updated_at": "2026-03-07"
+  },
+  {
+    "id": "auto-parking-systems",
+    "title": "Auto Parking Systems",
+    "status": "published",
+    "meta_title": "Auto Parking Systems | Smart Vertical Parking Solutions",
+    "meta_description": "Aspire Excel delivers advanced automated parking solutions designed to maximize space efficiency and support modern urban infrastructure with 8-18 car capacity and 60-90 second retrieval cycles.",
+    "meta_keywords": [
+      "auto parking system",
+      "rotary parking system",
+      "tower parking system",
+      "vertical parking solution",
+      "automated car parking system",
+      "smart parking technology"
+    ],
+    "og_image": "/images/products/auto-parking-systems.jpg",
+    "priority": "0.8",
+    "canonical_link": "https://aspireexcel.com/products/auto-parking/",
+    "slug": "/products/auto-parking/",
+    "created_at": "2026-03-07",
+    "updated_at": "2026-03-07"
+  },
+  {
+    "id": "gallery",
+    "title": "Gallery",
+    "status": "published",
+    "meta_title": "Gallery | Aspire Grand Excel Automation",
+    "meta_description": "Browse our project gallery showcasing installed textile machinery, spinning automation systems, and auto parking solutions across India and Bangladesh.",
+    "meta_keywords": [
+      "aspire excel gallery",
+      "textile automation gallery",
+      "spinning automation projects",
+      "industrial automation gallery"
+    ],
+    "og_image": "/images/gallery-og.jpg",
+    "priority": "0.7",
+    "canonical_link": "https://aspireexcel.com/gallery/",
+    "slug": "/gallery/",
+    "created_at": "2026-03-07",
+    "updated_at": "2026-03-07"
+  },
+  {
+    "id": "clients",
+    "title": "Clients",
+    "status": "published",
+    "meta_title": "Our Clients | Aspire Grand Excel Automation",
+    "meta_description": "Aspire Grand Excel Automation proudly serves 100+ textile mills across India and Bangladesh. Discover our client success stories and partnerships.",
+    "meta_keywords": [
+      "aspire excel clients",
+      "textile mill clients",
+      "industrial automation customers",
+      "spinning mill partners"
+    ],
+    "og_image": "/images/clients-og.jpg",
+    "priority": "0.7",
+    "canonical_link": "https://aspireexcel.com/clients/",
+    "slug": "/clients/",
+    "created_at": "2026-03-07",
+    "updated_at": "2026-03-07"
+  },
+  {
+    "id": "contact",
+    "title": "Contact Us",
+    "status": "published",
+    "meta_title": "Contact Aspire Grand Excel Automation",
+    "meta_description": "Contact Aspire Grand Excel Automation for enquiries about spinning automation, auto parking systems, and textile machinery solutions. Based in Coimbatore, India.",
+    "meta_keywords": [
+      "contact aspire excel",
+      "textile automation company contact",
+      "spinning automation solutions contact",
+      "industrial automation support"
+    ],
+    "og_image": "/images/contact-og.jpg",
+    "priority": "0.6",
+    "canonical_link": "https://aspireexcel.com/contact/",
+    "slug": "/contact/",
+    "created_at": "2026-03-07",
+    "updated_at": "2026-03-07"
+  }
+]
