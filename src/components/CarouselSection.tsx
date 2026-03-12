@@ -173,7 +173,7 @@ export function CarouselSection() {
 
         {/* Main Content Container - Highest Z-index */}
         <div className="relative w-full flex-1 flex items-center justify-center z-30 py-20">
-          <div className="w-full max-w-[1550px] mx-auto px-4 sm:px-6">
+          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
               {/* Left Content */}

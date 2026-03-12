@@ -194,7 +194,7 @@ export function HomePage({ }: HomePageProps) {
       <CarouselSection />
 
       {/* Welcome Section */}
-      <section className="py-16 px-4 max-w-[1550px] mx-auto">
+      <section className="py-16 px-4 max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
             Welcome to our Aspire Excel

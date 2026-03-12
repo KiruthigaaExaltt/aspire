@@ -111,7 +111,7 @@ export function Header() {
 
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50">
-      <div className="max-w-[1550px] mx-auto px-4 sm:px-6 lg:px-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4">
         <div className="flex justify-between items-center h-24">
           {/* Logo */}
           <Link
@@ -126,7 +126,7 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-16">
+          <nav className="hidden lg:flex space-x-16">
             <Link
               to="/"
               className={`px-3 py-2 rounded-md transition-colors ${currentPath === '/'
@@ -267,7 +267,7 @@ export function Header() {
                   </div>
 
                   {/* Tablet (768-1023px): Centered, single column with preview below */}
-                  <div className="hidden md:block lg:hidden absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[500px] bg-white rounded-lg shadow-2xl border border-gray-200 z-50 overflow-hidden">
+                  <div className="hidden lg:hidden absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[500px] bg-white rounded-lg shadow-2xl border border-gray-200 z-50 overflow-hidden">
                     {/* Arrow pointing to trigger */}
                     <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-l border-t border-gray-200 transform rotate-45"></div>
 
@@ -393,7 +393,7 @@ export function Header() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden text-primary"
+            className="lg:hidden text-primary"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -402,7 +402,7 @@ export function Header() {
 
         {/* Mobile Navigation (<768px): Full-width bottom sheet, list only, no preview */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200 animate-slideDown">
+          <div className="lg:hidden bg-white border-t border-gray-200 animate-slideDown">
             <nav className="py-4 space-y-1 max-h-[calc(100vh-80px)] overflow-y-auto">
               <Link
                 to="/"

@@ -372,7 +372,7 @@ export function AutoParkingSystemPage() {
         </div>
 
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-primary via-primary to-primary/90 text-white overflow-hidden">
+        <section className="relative flex items-center justify-center bg-gradient-to-br from-primary via-primary to-primary/90 text-white overflow-hidden py-15 sm:py-20 md:py-25 lg:py-30">
           {/* Animated Pattern Background */}
           <div className="absolute inset-0">
             <motion.div
@@ -387,7 +387,7 @@ export function AutoParkingSystemPage() {
             ></motion.div>
           </div>
 
-          <div className="max-w-[1550px] mx-auto px-4 pt-24 pb-8 sm:pt-32 sm:pb-12 md:pt-36 md:pb-16 lg:pt-40 lg:pb-20 relative z-10">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 py-6 sm:py-8 md:py-10 lg:py-12 relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start lg:items-center py-10">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
@@ -722,7 +722,7 @@ export function AutoParkingSystemPage() {
             className="absolute bottom-10 left-10 w-40 h-40 bg-primary/5 rounded-full blur-xl"
           ></motion.div>
 
-          <div className="max-w-[1550px] mx-auto px-4 relative z-10">
+          <div className="max-w-7xl mx-auto px-4 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -873,7 +873,7 @@ export function AutoParkingSystemPage() {
             className="absolute bottom-20 left-20 w-40 h-40 bg-accent/5 rounded-full blur-xl"
           ></motion.div>
 
-          <div className="max-w-[1550px] mx-auto px-4 relative z-10">
+          <div className="max-w-7xl mx-auto px-4 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -991,7 +991,7 @@ export function AutoParkingSystemPage() {
             className="absolute bottom-0 left-0 w-48 h-48 bg-primary/3 rounded-full blur-2xl"
           ></motion.div>
 
-          <div className="max-w-[1550px] mx-auto px-4 relative z-10">
+          <div className="max-w-7xl mx-auto px-4 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1117,7 +1117,7 @@ export function AutoParkingSystemPage() {
             <div className="fixed inset-x-0 top-0 bottom-0 w-screen h-full bg-white z-[-1] left-0 right-0"></div>
           </div>
 
-          <div className="max-w-[1550px] mx-auto px-4 relative z-10">
+          <div className="max-w-7xl mx-auto px-4 relative z-10">
             {/* Rotary Parking System Overview */}
             <div className="text-center mb-16">
               <Badge className="mb-4 bg-accent/10 text-accent border-accent/20">Featured Product</Badge>
@@ -1288,7 +1288,7 @@ export function AutoParkingSystemPage() {
             <div className="fixed inset-x-0 top-0 bottom-0 w-screen h-full bg-white z-[-1] left-0 right-0"></div>
           </div>
 
-          <div className="max-w-[1550px] mx-auto px-4 relative z-10">
+          <div className="max-w-7xl mx-auto px-4 relative z-10">
             {/* Elevate Series Overview */}
             <div className="text-center mb-16">
               <Badge className="mb-4 bg-accent/10 text-accent border-accent/20">Premium Series</Badge>
@@ -1388,7 +1388,7 @@ export function AutoParkingSystemPage() {
             <div className="fixed inset-x-0 top-0 bottom-0 w-screen h-full bg-white z-[-1] left-0 right-0"></div>
           </div>
 
-          <div className="max-w-[1550px] mx-auto px-4 relative z-10">
+          <div className="max-w-7xl mx-auto px-4 relative z-10">
             {/* Tower System Overview */}
             <div className="text-center mb-16">
               <Badge className="mb-4 bg-accent/10 text-accent border-accent/20">Enterprise Solution</Badge>
@@ -1479,7 +1479,7 @@ export function AutoParkingSystemPage() {
 
         {/* Enhanced Models Table */}
         <section id="models" className="py-20 bg-gradient-to-br from-white to-gray-50">
-          <div className="max-w-[1550px] mx-auto px-4">
+          <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
               <Badge className="mb-4 bg-accent/10 text-accent border-accent/20">Available Models</Badge>
               <h2 className="text-4xl md:text-5xl font-bold mb-4">Choose Your Perfect Model</h2>
@@ -1566,7 +1566,7 @@ export function AutoParkingSystemPage() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(255,255,255,0.1),transparent)] animate-pulse delay-1000"></div>
           </div>
 
-          <div className="max-w-[1550px] mx-auto px-4 relative z-10">
+          <div className="max-w-7xl mx-auto px-4 relative z-10">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div>
                 <Badge className="mb-6 bg-white/20 text-white border-white/30">Get Started Today</Badge>

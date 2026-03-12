@@ -184,7 +184,7 @@ export function BobbinTransportPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/95 via-primary/85 to-accent/75 text-white pt-32 pb-12 sm:pt-40 sm:pb-16 md:pt-36 md:pb-20 lg:pt-48 lg:pb-24 px-4 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary/95 via-primary/85 to-accent/75 text-white py-15 sm:py-20 md:py-25 lg:py-30 px-4 overflow-hidden">
         {/* <div
           className="absolute inset-0 opacity-10"
           style={{
@@ -194,7 +194,7 @@ export function BobbinTransportPage() {
         /> */}
 
         <div
-          className="max-w-[1550px] mx-auto relative lg:pt-0 px-4 md:px-6"
+          className="max-w-7xl mx-auto relative lg:pt-0 px-6 sm:px-8 md:px-12"
           style={{ paddingTop: "10px" }}
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start lg:items-center py-10">
@@ -203,8 +203,8 @@ export function BobbinTransportPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="flex items-center mb-6">
-                <Badge variant="secondary" className="mr-4 px-4 py-2 bg-white/20 text-white border-white/30">
+              <div className="flex flex-wrap items-center gap-3 mb-6">
+                <Badge variant="secondary" className="px-4 py-2 bg-white/20 text-white border-white/30">
                   <Truck className="h-4 w-4 mr-2" />
                   Automation System
                 </Badge>
@@ -310,7 +310,7 @@ export function BobbinTransportPage() {
 
       {/* Process Flow Section */}
       <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-[1550px] mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
               How It Works
@@ -331,7 +331,7 @@ export function BobbinTransportPage() {
                 viewport={{ once: true }}
                 className="relative"
               >
-                <Card className="text-center hover:shadow-lg transition-shadow">
+                <Card className="text-center hover:shadow-lg transition-shadow border-[#0000001A]">
                   <CardHeader>
                     <div className="mx-auto mb-4 flex items-center justify-center w-16 h-16 bg-primary text-white rounded-full">
                       {step.icon}
@@ -357,7 +357,7 @@ export function BobbinTransportPage() {
 
       {/* Tabbed Content Section */}
       <section className="py-16 px-4">
-        <div className="max-w-[1550px] mx-auto">
+        <div className="max-w-7xl mx-auto">
           <Tabs defaultValue="overview" className="w-full" value={activeTab} onValueChange={setActiveTab}>
             <div className="mb-12 flex justify-center">
               <TabsList className="flex flex-col sm:flex-row gap-2 sm:gap-0 rounded-2xl bg-white p-2 shadow-lg h-auto border-0 w-fit mx-0 sm:mx-auto">
@@ -440,7 +440,7 @@ export function BobbinTransportPage() {
                 </div>
                 <div className="space-y-6">
                   {benefits.slice(0, 2).map((benefit, index) => (
-                    <Card key={index} className="hover:shadow-md transition-shadow">
+                    <Card key={index} className="hover:shadow-md transition-shadow border-[#0000001A]">
                       <CardContent className="p-6">
                         <div className="flex items-center justify-between mb-3">
                           <div className="flex items-center">
@@ -471,7 +471,7 @@ export function BobbinTransportPage() {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer"
+                    <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer border-[#0000001A]"
                       onClick={() => setExpandedFeature(expandedFeature === index ? null : index)}>
                       <CardHeader>
                         <div className="flex items-center justify-between">
@@ -511,7 +511,7 @@ export function BobbinTransportPage() {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <Card className="text-center hover:shadow-lg transition-shadow">
+                    <Card className="text-center hover:shadow-lg transition-shadow border-[#0000001A]">
                       <CardHeader>
                         <div className="mx-auto mb-4 flex items-center justify-center w-12 h-12 bg-accent/10 text-accent rounded-lg">
                           {benefit.icon}
@@ -554,7 +554,7 @@ export function BobbinTransportPage() {
             <TabsContent value="services" className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {technicalServices.map((service, index) => (
-                  <Card key={index} className="hover:shadow-lg transition-shadow">
+                  <Card key={index} className="hover:shadow-lg transition-shadow border-[#0000001A]">
                     <CardHeader>
                       <div className="flex items-center justify-between">
                         <CardTitle className="text-primary">{service.title}</CardTitle>
@@ -575,7 +575,7 @@ export function BobbinTransportPage() {
 
       {/* Specifications Section */}
       <section id="specifications" className="py-16 px-4 bg-gray-50">
-        <div className="max-w-[1550px] mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
               Technical Specifications
@@ -586,7 +586,7 @@ export function BobbinTransportPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow border-[#0000001A]">
               <CardHeader>
                 <CardTitle className="flex items-center text-primary">
                   <Settings className="h-6 w-6 mr-3" />
@@ -606,7 +606,7 @@ export function BobbinTransportPage() {
             </Card>
 
             <div className="space-y-6">
-              <Card className="hover:shadow-lg transition-shadow">
+              <Card className="hover:shadow-lg transition-shadow border-[#0000001A]">
                 <CardHeader>
                   <CardTitle className="flex items-center text-primary">
                     <Shield className="h-6 w-6 mr-3" />
@@ -635,7 +635,7 @@ export function BobbinTransportPage() {
                 </CardContent>
               </Card>
 
-              <Card className="hover:shadow-lg transition-shadow">
+              <Card className="hover:shadow-lg transition-shadow border-[#0000001A]">
                 <CardHeader>
                   <CardTitle className="flex items-center text-primary">
                     <Award className="h-6 w-6 mr-3" />
@@ -670,7 +670,7 @@ export function BobbinTransportPage() {
 
       {/* ROI Calculator Section */}
       <section id="roi-calculator" className="py-16 px-4">
-        <div className="max-w-[1550px] mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
               ROI Calculator
@@ -681,7 +681,7 @@ export function BobbinTransportPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow border-[#0000001A]">
               <CardHeader>
                 <CardTitle className="flex items-center text-primary">
                   <Calculator className="h-6 w-6 mr-3" />
@@ -729,7 +729,7 @@ export function BobbinTransportPage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow border-[#0000001A]">
               <CardHeader>
                 <CardTitle className="flex items-center text-accent">
                   <TrendingUp className="h-6 w-6 mr-3" />
@@ -772,7 +772,7 @@ export function BobbinTransportPage() {
 
       {/* Call to Action Section */}
       <section className="py-16 px-4 bg-gradient-to-r from-primary to-accent text-white">
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto px-4 py-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Transform Your Bobbin Handling?
           </h2>

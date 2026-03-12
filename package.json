@@ -5,9 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/async-css.js",
-    "postbuild": "node scripts/gen-seo-files.mjs && node scripts/test-meta-tags.mjs && node scripts/postbuild.mjs && node scripts/check-hidden-h1.mjs",
-    "test:meta": "node scripts/test-meta-tags.mjs",
+    "build": "vite build",
+    "postbuild": "node scripts/async-css.js && node scripts/gen-seo-files.mjs && node scripts/test-meta-tags.mjs && node scripts/postbuild.mjs",
     "test:h1": "node scripts/check-hidden-h1.mjs",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"

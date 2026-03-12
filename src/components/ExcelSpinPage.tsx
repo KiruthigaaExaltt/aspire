@@ -194,7 +194,7 @@ export function ExcelSpinPage() {
   return (
     <div className="bg-background min-h-screen">
       {/* Hero Section with Fiber Animation */}
-      <section className="from-primary via-primary/90 to-accent/30 relative flex items-start lg:items-center justify-center overflow-hidden bg-gradient-to-br pt-32 pb-12 sm:pt-40 sm:pb-16 md:pt-36 md:pb-20 lg:pt-48 lg:pb-24">
+      <section className="from-primary via-primary/90 to-accent/30 relative flex items-center justify-center overflow-hidden bg-gradient-to-br py-15 sm:py-20 md:py-25 lg:py-30">
         {/* Animated Fiber Flow Background */}
         <div className="absolute inset-0">
           {/* Flowing fiber strands */}
@@ -221,7 +221,7 @@ export function ExcelSpinPage() {
           ))}
         </div>
 
-        <div className="relative z-10 mx-auto max-w-[1550px] px-4 md:px-6 py-6 sm:py-8 md:py-10 lg:py-12">
+        <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8 md:px-12 py-6 sm:py-8 md:py-10 lg:py-12">
           <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12">
             {/* Left Content */}
             <motion.div
@@ -438,7 +438,7 @@ export function ExcelSpinPage() {
       </section>
 
       {/* Main Content */}
-      <div className="mx-auto max-w-[1550px] px-4 py-16 pb-6 md:pb-16 lg:pb-20">
+      <div className="mx-auto max-w-7xl px-4 py-16 pb-6 md:pb-16 lg:pb-20">
         {/* Navigation Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-16">
           <div className="mb-8 flex justify-center">
@@ -520,7 +520,7 @@ export function ExcelSpinPage() {
                     viewport={{ once: true }}
                   >
                     <Card
-                      className="group h-full cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                      className="group h-full cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl border-[#0000001A]"
                       onClick={() =>
                         setExpandedFeature(
                           expandedFeature === index ? null : index,
@@ -722,7 +722,7 @@ export function ExcelSpinPage() {
                     transition={{ duration: 0.6, delay: index * 0.2 }}
                     viewport={{ once: true }}
                   >
-                    <Card className="h-full transition-shadow hover:shadow-lg">
+                    <Card className="h-full transition-shadow hover:shadow-lg border-[#0000001A]">
                       <CardContent className="p-6">
                         <div className="mb-4 flex items-center">
                           {[...Array(5)].map((_, i) => (
@@ -789,7 +789,7 @@ export function ExcelSpinPage() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <Card className="group overflow-hidden transition-all duration-300 hover:shadow-xl">
+                  <Card className="group overflow-hidden transition-all duration-300 hover:shadow-xl border-[#0000001A]">
                     <div className="relative aspect-video overflow-hidden">
                       {/* <ImageWithFallback */}
                       <MyImage
@@ -832,7 +832,7 @@ export function ExcelSpinPage() {
                 <h3 className="text-primary mb-6 text-2xl font-bold">
                   Technical Specifications
                 </h3>
-                <Card>
+                <Card className="border-[#0000001A]">
                   <CardContent className="p-6">
                     <div className="space-y-6">
                       {[
@@ -920,7 +920,7 @@ export function ExcelSpinPage() {
                   Quality Benefits
                 </h3>
                 <div className="space-y-6">
-                  <Card>
+                  <Card className="border-[#0000001A]">
                     <CardHeader>
                       <CardTitle className="flex items-center">
                         <Microscope className="mr-2 h-5 w-5 text-green-600" />
@@ -961,7 +961,7 @@ export function ExcelSpinPage() {
                     </CardContent>
                   </Card>
 
-                  <Card>
+                  <Card className="border-[#0000001A]">
                     <CardHeader>
                       <CardTitle className="flex items-center">
                         <Target className="mr-2 h-5 w-5 text-green-600" />
@@ -990,7 +990,7 @@ export function ExcelSpinPage() {
                     </CardContent>
                   </Card>
 
-                  <Card>
+                  <Card className="border-[#0000001A]">
                     <CardHeader>
                       <CardTitle className="flex items-center">
                         <Award className="mr-2 h-5 w-5 text-green-600" />
@@ -1041,7 +1041,7 @@ export function ExcelSpinPage() {
 
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
               {/* Calculator Input */}
-              <Card>
+              <Card className="border-[#0000001A]">
                 <CardHeader>
                   <CardTitle className="flex items-center">
                     <Calculator className="mr-2 h-5 w-5 text-green-600" />

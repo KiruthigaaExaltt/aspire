@@ -131,13 +131,13 @@ export function AutoDofferPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section with Animated Elements */}
-      <section className="relative flex items-start lg:items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-primary/90 to-accent/20 pt-32 pb-12 sm:pt-40 sm:pb-16 md:pt-36 md:pb-20 lg:pt-48 lg:pb-24">
+      <section className="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-primary/90 to-accent/20 py-15 sm:py-20 md:py-25 lg:py-30">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
           {/* Remove the animated circular background elements */}
         </div>
 
-        <div className="max-w-[1550px] mx-auto px-4 py-6 sm:py-8 md:py-10 lg:py-12 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 py-6 sm:py-8 md:py-10 lg:py-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
             {/* Left Content */}
             <motion.div
@@ -248,7 +248,7 @@ export function AutoDofferPage() {
 
 
                 <motion.div
-                  className="absolute -top-3 -right-3 sm:-top-6 sm:-right-6 bg-[#161243]/[0.45] backdrop-blur-[0.2px] rounded-xl sm:rounded-2xl p-2 sm:p-4 border border-[#161243]/[0.24] shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
+                  className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-[#161243]/[0.45] backdrop-blur-[0.2px] rounded-xl sm:rounded-2xl p-2 sm:p-4 border border-[#161243]/[0.24] shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 >
@@ -260,7 +260,7 @@ export function AutoDofferPage() {
                 </motion.div>
 
                 <motion.div
-                  className="absolute -bottom-3 -left-3 sm:-bottom-6 sm:-left-6 bg-[#161243]/[0.45] backdrop-blur-[0.2px] rounded-xl sm:rounded-2xl p-2 sm:p-4 border border-[#161243]/[0.24] shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
+                  className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 bg-[#161243]/[0.45] backdrop-blur-[0.2px] rounded-xl sm:rounded-2xl p-2 sm:p-4 border border-[#161243]/[0.24] shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
                   animate={{ y: [0, 10, 0] }}
                   transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
                 >
@@ -286,7 +286,7 @@ export function AutoDofferPage() {
       </section>
 
       {/* Main Content */}
-      <div className="mx-auto max-w-[1550px] px-4 py-16 pb-6 md:pb-16 lg:pb-20">
+      <div className="mx-auto max-w-7xl px-4 py-16 pb-6 md:pb-16 lg:pb-20">
 
         {/* Navigation Tabs */}
 
@@ -636,7 +636,7 @@ export function AutoDofferPage() {
               <div>
                 <h3 className="text-2xl font-bold text-primary mb-6">Installation Requirements</h3>
                 <div className="space-y-6">
-                  <Card>
+                  <Card className="border-[#0000001A]">
                     <CardHeader>
                       <CardTitle className="flex items-center">
                         <Settings className="h-5 w-5 mr-2 text-accent" />
@@ -653,7 +653,7 @@ export function AutoDofferPage() {
                     </CardContent>
                   </Card>
 
-                  <Card>
+                  <Card className="border-[#0000001A]">
                     <CardHeader>
                       <CardTitle className="flex items-center">
                         <Wrench className="h-5 w-5 mr-2 text-accent" />
@@ -682,7 +682,7 @@ export function AutoDofferPage() {
                     </CardContent>
                   </Card>
 
-                  <Card>
+                  <Card className="border-[#0000001A]">
                     <CardHeader>
                       <CardTitle className="flex items-center">
                         <Shield className="h-5 w-5 mr-2 text-accent" />
@@ -759,7 +759,7 @@ export function AutoDofferPage() {
               </Card>
 
               {/* ROI Breakdown */}
-              <Card>
+              <Card className="border-[#0000001A]">
                 <CardHeader>
                   <CardTitle>Annual Benefits Breakdown</CardTitle>
                   <CardDescription>
@@ -788,7 +788,7 @@ export function AutoDofferPage() {
                         color: "bg-yellow-500"
                       }
                     ].map((benefit, index) => (
-                      <div key={index} className="flex items-center justify-between p-4 border rounded-lg">
+                      <div key={index} className="flex items-center justify-between p-4 border border-[#0000001A] rounded-lg">
                         <div className="flex items-center">
                           <div className={`p-2 ${benefit.color} text-white rounded-lg mr-3`}>
                             {benefit.icon}

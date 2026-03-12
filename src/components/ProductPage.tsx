@@ -145,7 +145,7 @@ export function ProductPage({ productIndex = 0 }: ProductPageProps) {
 
   if (!currentProduct) {
     return (
-      <div className="min-h-screen py-16 px-4 max-w-[1550px] mx-auto text-center">
+      <div className="min-h-screen py-16 px-4 max-w-7xl mx-auto text-center">
         <h1 className="text-4xl font-bold text-primary mb-6">Product Not Found</h1>
         <p className="text-gray-600">The requested product could not be found.</p>
       </div>
@@ -153,7 +153,7 @@ export function ProductPage({ productIndex = 0 }: ProductPageProps) {
   }
 
   return (
-    <div className="min-h-screen pt-24 pb-8 sm:pt-32 sm:pb-12 md:pt-36 md:pb-16 lg:py-10 px-4 max-w-[1550px] mx-auto" >
+    <div className="min-h-screen pt-24 pb-8 sm:pt-32 sm:pb-12 md:pt-36 md:pb-16 lg:py-10 px-4 max-w-7xl mx-auto" >
       {/* Header */}
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">{currentProduct.name}</h1>

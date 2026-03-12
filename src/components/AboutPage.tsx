@@ -1,47 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
-// import { Button } from './ui/button';
 import { Target, Eye, Award, Users, CheckCircle, Factory, Globe, Zap, Trophy, Building, Sparkles, Lightbulb, Rocket, Shield } from 'lucide-react';
 import { motion } from 'motion/react';
 import { images } from '../components/constants/image';
 import { MyImage, MotionMyImage } from './ui/MyImage';
+import { useLocation } from "react-router-dom";
 
-// Animated Counter Component
-// function AnimatedCounter({ target, duration = 2000 }: { target: number; duration?: number }) {
-//   const [count, setCount] = useState(0);
-//   const [hasAnimated, setHasAnimated] = useState(false);
-
-//   useEffect(() => {
-//     if (hasAnimated) return;
-
-//     setHasAnimated(true);
-//     const startTime = Date.now();
-//     const endTime = startTime + duration;
-
-//     const timer = setInterval(() => {
-//       const now = Date.now();
-//       const progress = Math.min((now - startTime) / duration, 1);
-
-//       // Easing function for smooth animation
-//       const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-//       const currentCount = Math.floor(easeOutQuart * target);
-
-//       setCount(currentCount);
-
-//       if (progress === 1) {
-//         clearInterval(timer);
-//         setCount(target);
-//       }
-//     }, 16); // ~60fps
-
-//     return () => clearInterval(timer);
-//   }, [target, duration, hasAnimated]);
-
-//   return <span>{count}</span>;
-// }
-
-// Counter Animation with delay support
 function CounterAnimation({ target, suffix = '', delay = 0 }: { target: number; suffix?: string; delay?: number }) {
   const [count, setCount] = useState(0);
   const [hasStarted, setHasStarted] = useState(false);
@@ -83,7 +48,15 @@ function CounterAnimation({ target, suffix = '', delay = 0 }: { target: number; 
   return <span>{count}{suffix}</span>;
 }
 
+
+
 export function AboutPage() {
+  const { pathname } = useLocation();
+  // Strip leading/trailing slashes, take the last segment
+  // e.g. "/about/" → "about", "/products/auto-doffer/" → "auto-doffer"
+  const metaTitle = pathname.replace(/^\/|\/$/g, '').split('/').pop() || 'home';
+
+  console.log("Meta title:", metaTitle);
   const [visibleItems, setVisibleItems] = useState(new Set());
 
   console.log("Visible timeline items:", visibleItems);
@@ -211,9 +184,13 @@ export function AboutPage() {
   return (
     <div className="min-h-screen relative overflow-hidden">
 
-
+      {metaTitle ? (
+        <h1 className="visually-hidden">
+          {metaTitle}
+        </h1>
+      ) : null}
       {/* Hero Section */}
-      <section className="relative pt-24 pb-10 sm:pt-32 sm:pb-12 md:pt-36 md:pb-16 lg:pt-40 lg:pb-20 overflow-hidden">
+      <section className="relative flex items-center justify-center py-15 sm:py-20 md:py-25 lg:py-30 overflow-hidden">
         {/* Background Image with Parallax Effect */}
         <div className="absolute inset-0">
           <MotionMyImage
@@ -228,7 +205,7 @@ export function AboutPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-transparent via-accent/5 to-transparent"></div>
         </div>
 
-        <div className="max-w-[1550px] mx-auto px-4 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 relative z-10">
           <motion.div
             className="text-center"
             initial={{ opacity: 0, y: 50 }}
@@ -313,7 +290,7 @@ export function AboutPage() {
         </div>
       </section>
 
-      <div className="max-w-[1550px] mx-auto px-4 py-16 relative">
+      <div className="max-w-7xl mx-auto px-4 py-16 relative">
         {/* Creative Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-accent/5 via-transparent to-primary/5 opacity-50"></div>
@@ -344,7 +321,7 @@ export function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="max-w-7xl mx-auto"
+            className="max-w-5xl mx-auto"
           >
             <Card className="bg-gradient-to-r from-primary via-accent to-destructive text-white border-0 shadow-2xl">
               <CardContent className="p-4 sm:p-6 md:p-12 text-left sm:text-center">
@@ -400,7 +377,7 @@ export function AboutPage() {
             </div>
 
             {/* Milestone Timeline */}
-            <div className="relative max-w-[1550px] mx-auto z-10">
+            <div className="relative max-w-7xl mx-auto z-10">
               {/* Simple Timeline Line */}
               <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-primary via-accent to-primary rounded-full z-10 shadow-lg hidden md:block"
                 style={{ height: `${milestones.length * 400}px`, top: '0px' }}></div>
@@ -835,7 +812,7 @@ export function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="order-2 lg:order-1"
+              className="order-2 lg:order-1 p-2"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-center lg:text-left text-primary mb-6">Product Journey</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed text-base md:text-lg">

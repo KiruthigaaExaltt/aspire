@@ -212,7 +212,7 @@ export function AutoconePackingPage({ }: AutoconePackingPageProps) {
   return (
     <div className="bg-background min-h-screen">
       {/* Hero Section */}
-      <section className="from-primary/95 via-primary/85 to-accent/75 relative overflow-hidden bg-gradient-to-br px-4 pt-32 pb-12 sm:pt-40 sm:pb-16 md:pt-36 md:pb-20 lg:pt-48 lg:pb-24 text-white">
+      <section className="from-primary/95 via-primary/85 to-accent/75 relative overflow-hidden bg-gradient-to-br px-4 py-15 sm:py-20 md:py-25 lg:py-30 text-white">
         <div
           className="absolute inset-0 opacity-10"
           style={{
@@ -221,17 +221,17 @@ export function AutoconePackingPage({ }: AutoconePackingPageProps) {
           }}
         />
 
-        <div className="relative mx-auto max-w-[1550px] lg:pt-0 py-0 px-4 md:px-6" style={{ paddingTop: "10px" }}>
+        <div className="relative mx-auto max-w-7xl lg:pt-0 py-0 px-6 sm:px-8 md:px-12" style={{ paddingTop: "10px" }}>
           <div className="grid grid-cols-1 items-start lg:items-center gap-12 lg:grid-cols-2 py-10">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="mb-6 flex items-center">
+              <div className="mb-6 flex flex-wrap items-center gap-3">
                 <Badge
                   variant="secondary"
-                  className="mr-4 border-white/30 bg-white/20 px-4 py-2 text-white"
+                  className="border-white/30 bg-white/20 px-4 py-2 text-white"
                 >
                   <Package className="mr-2 h-4 w-4" />
                   Packaging System
@@ -348,7 +348,7 @@ export function AutoconePackingPage({ }: AutoconePackingPageProps) {
 
       {/* Process Flow Section */}
       <section className="bg-gray-50 px-4 py-16">
-        <div className="mx-auto max-w-[1550px]">
+        <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
             <h2 className="text-primary mb-4 text-3xl font-bold md:text-4xl">
               Packaging Process Flow
@@ -369,7 +369,7 @@ export function AutoconePackingPage({ }: AutoconePackingPageProps) {
                 viewport={{ once: true }}
                 className="relative"
               >
-                <Card className="text-center transition-shadow hover:shadow-lg">
+                <Card className="text-center transition-shadow hover:shadow-lg border-[#0000001A]">
                   <CardHeader>
                     <div className="bg-primary mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full text-white">
                       {step.icon}
@@ -395,7 +395,7 @@ export function AutoconePackingPage({ }: AutoconePackingPageProps) {
 
       {/* Tabbed Content Section */}
       <section className="px-4 py-16">
-        <div className="mx-auto max-w-[1550px]">
+        <div className="mx-auto max-w-7xl">
 
           <Tabs defaultValue="overview" className="w-full" value={activeTab} onValueChange={setActiveTab}>
             <div className="mb-8 flex justify-center">
@@ -482,7 +482,7 @@ export function AutoconePackingPage({ }: AutoconePackingPageProps) {
                   {benefits.slice(0, 2).map((benefit, index) => (
                     <Card
                       key={index}
-                      className="transition-shadow hover:shadow-md"
+                      className="transition-shadow hover:shadow-md border-[#0000001A]"
                     >
                       <CardContent className="p-6">
                         <div className="mb-3 flex items-center justify-between">
@@ -522,7 +522,7 @@ export function AutoconePackingPage({ }: AutoconePackingPageProps) {
                     viewport={{ once: true }}
                   >
                     <Card
-                      className="h-full cursor-pointer transition-shadow hover:shadow-lg"
+                      className="h-full cursor-pointer transition-shadow hover:shadow-lg border-[#0000001A]"
                       onClick={() =>
                         setExpandedFeature(
                           expandedFeature === index ? null : index,
@@ -572,7 +572,7 @@ export function AutoconePackingPage({ }: AutoconePackingPageProps) {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <Card className="text-center transition-shadow hover:shadow-lg">
+                    <Card className="text-center transition-shadow hover:shadow-lg border-[#0000001A]">
                       <CardHeader>
                         <div className="bg-accent/10 text-accent mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg">
                           {benefit.icon}
@@ -627,7 +627,7 @@ export function AutoconePackingPage({ }: AutoconePackingPageProps) {
                 {technicalServices.map((service, index) => (
                   <Card
                     key={index}
-                    className="transition-shadow hover:shadow-lg"
+                    className="transition-shadow hover:shadow-lg border-[#0000001A]"
                   >
                     <CardHeader>
                       <div className="flex items-center justify-between">
@@ -649,7 +649,7 @@ export function AutoconePackingPage({ }: AutoconePackingPageProps) {
 
       {/* Specifications Section */}
       <section id="specifications" className="bg-gray-50 px-4 py-16">
-        <div className="mx-auto max-w-[1550px]">
+        <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
             <h2 className="text-primary mb-4 text-3xl font-bold md:text-4xl">
               Technical Specifications
@@ -660,7 +660,7 @@ export function AutoconePackingPage({ }: AutoconePackingPageProps) {
           </div>
 
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-            <Card className="transition-shadow hover:shadow-lg">
+            <Card className="transition-shadow hover:shadow-lg border-[#0000001A]">
               <CardHeader>
                 <CardTitle className="text-primary flex items-center">
                   <Settings className="mr-3 h-6 w-6" />
@@ -685,7 +685,7 @@ export function AutoconePackingPage({ }: AutoconePackingPageProps) {
             </Card>
 
             <div className="space-y-6">
-              <Card className="transition-shadow hover:shadow-lg">
+              <Card className="transition-shadow hover:shadow-lg border-[#0000001A]">
                 <CardHeader>
                   <CardTitle className="text-primary flex items-center">
                     <Shield className="mr-3 h-6 w-6" />
@@ -714,7 +714,7 @@ export function AutoconePackingPage({ }: AutoconePackingPageProps) {
                 </CardContent>
               </Card>
 
-              <Card className="transition-shadow hover:shadow-lg">
+              <Card className="transition-shadow hover:shadow-lg border-[#0000001A]">
                 <CardHeader>
                   <CardTitle className="text-primary flex items-center">
                     <Award className="mr-3 h-6 w-6" />
@@ -749,7 +749,7 @@ export function AutoconePackingPage({ }: AutoconePackingPageProps) {
 
       {/* ROI Calculator Section */}
       <section id="roi-calculator" className="px-4 py-16">
-        <div className="mx-auto max-w-[1550px]">
+        <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
             <h2 className="text-primary mb-4 text-3xl font-bold md:text-4xl">
               ROI Calculator
@@ -761,7 +761,7 @@ export function AutoconePackingPage({ }: AutoconePackingPageProps) {
           </div>
 
           <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
-            <Card className="transition-shadow hover:shadow-lg">
+            <Card className="transition-shadow hover:shadow-lg border-[#0000001A]">
               <CardHeader>
                 <CardTitle className="text-primary flex items-center">
                   <Calculator className="mr-3 h-6 w-6" />
@@ -821,7 +821,7 @@ export function AutoconePackingPage({ }: AutoconePackingPageProps) {
               </CardContent>
             </Card>
 
-            <Card className="transition-shadow hover:shadow-lg">
+            <Card className="transition-shadow hover:shadow-lg border-[#0000001A]">
               <CardHeader>
                 <CardTitle className="text-accent flex items-center">
                   <TrendingUp className="mr-3 h-6 w-6" />
