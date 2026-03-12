@@ -11,6 +11,8 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import { MyImage } from './ui/MyImage';
 import { images } from '../components/constants/image';
+import metaData from "../../metaData.js";
+import { normalizePath } from "../helpers/pathUtils";
 
 const NextArrow = (props: any) => {
   const { onClick } = props;
@@ -154,12 +156,18 @@ export function CarouselSection() {
   };
 
 
+const metaTitle = metaData?.find((m: any) => m?.slug === normalizePath(window.location.pathname))?.meta_title;
 
 
   const slideTemplate = (slide: CarouselSlide) => {
     return (
       <div className="relative w-full overflow-hidden group flex flex-col h-full">
         {/* Background Image */}
+         {metaTitle ? (
+        <h1 className="visually-hidden">
+          {metaTitle}
+        </h1>
+      ) : null}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-black/20 z-10"></div>
           <MyImage
@@ -191,10 +199,10 @@ export function CarouselSection() {
                 )}
                 {/* Title */}
                 <div className="space-y-4">
-                  <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold leading-tight"
+                  <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold leading-tight"
                     style={{ transitionDelay: '400ms' }}>
                     {slide.title}
-                  </h1>
+                  </h2>
                   <h2 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-accent font-medium"
                     style={{ transitionDelay: '600ms' }}>
                     {slide.subtitle}

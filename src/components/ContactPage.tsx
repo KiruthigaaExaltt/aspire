@@ -5,6 +5,8 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import PhoneNumberField from './PhoneNumberField';
+   import metaData from "../../metaData.js";
+import { normalizePath } from "../helpers/pathUtils";
 
 export function ContactPage() {
   const [formData, setFormData] = useState({
@@ -63,12 +65,18 @@ export function ContactPage() {
       hours: "Mon-Fri: 9:00 AM - 6:00 PM"
     }
   ];
+  const metaTitle = metaData?.find((m: any) => m?.slug === normalizePath(window.location.pathname))?.meta_title;
 
   return (
     <div className="min-h-screen py-16 px-4 max-w-7xl mx-auto">
       {/* Header */}
+    {metaTitle ? (
+        <h1 className="visually-hidden">
+          {metaTitle}
+        </h1>
+      ) : null}
       <div className="text-center mb-16">
-        <h1 className="text-3xl md:text-5xl font-bold text-primary mb-4">Contact Us</h1>
+        <h2 className="text-3xl md:text-5xl font-bold text-primary mb-4">Contact Us</h2>
         <p className="text-lg md:text-lg text-gray-500 max-w-3xl mx-auto">
           Get in touch with our expert team to discuss your textile manufacturing needs. We're
           here to help you find the perfect solution for your business.

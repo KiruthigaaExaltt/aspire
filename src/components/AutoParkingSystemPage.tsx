@@ -35,6 +35,8 @@ import {
 } from 'lucide-react';
 import { images } from '../components/constants/image';
 import { MyImage } from './ui/MyImage';
+import metaData from "../../metaData.js";
+import { normalizePath } from "../helpers/pathUtils";
 
 export function AutoParkingSystemPage() {
   // const [activeFeature, setActiveFeature] = useState(0);
@@ -203,6 +205,7 @@ export function AutoParkingSystemPage() {
       </div>
     );
   }
+  const metaTitle = metaData?.find((m: any) => m?.slug === normalizePath(window.location.pathname))?.meta_title;
 
   return (
     <>
@@ -220,6 +223,11 @@ export function AutoParkingSystemPage() {
           className={`fixed inset-0 bg-gradient-to-br from-primary via-primary/90 to-accent/20 z-50 flex items-center justify-center ${isLoaded ? 'pointer-events-none' : ''}`}
         >
           <div className="text-center">
+             {metaTitle ? (
+        <h1 className="visually-hidden">
+          {metaTitle}
+        </h1>
+      ) : null}
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
@@ -417,7 +425,7 @@ export function AutoParkingSystemPage() {
                   transition={{ duration: 0.8, delay: 0.6 }}
                   className="space-y-4"
                 >
-                  <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+                  <h2 className="text-5xl md:text-7xl font-bold leading-tight">
                     <motion.span
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -434,7 +442,7 @@ export function AutoParkingSystemPage() {
                     >
                       Systems
                     </motion.span>
-                  </h1>
+                  </h2>
 
                   <motion.p
                     initial={{ opacity: 0, y: 20 }}

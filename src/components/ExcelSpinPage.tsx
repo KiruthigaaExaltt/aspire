@@ -32,6 +32,8 @@ import {
   Sparkles,
   Minimize2,
 } from "lucide-react";
+import metaData from "../../metaData.js";
+import { normalizePath } from "../helpers/pathUtils";
 
 
 
@@ -190,10 +192,16 @@ export function ExcelSpinPage() {
       improvement: "ROI: 8 months",
     },
   ];
+const metaTitle = metaData?.find((m: any) => m?.slug === normalizePath(window.location.pathname))?.meta_title;
 
   return (
     <div className="bg-background min-h-screen">
       {/* Hero Section with Fiber Animation */}
+       {metaTitle ? (
+        <h1 className="visually-hidden">
+          {metaTitle}
+        </h1>
+      ) : null}
       <section className="from-primary via-primary/90 to-accent/30 relative flex items-center justify-center overflow-hidden bg-gradient-to-br py-15 sm:py-20 md:py-25 lg:py-30">
         {/* Animated Fiber Flow Background */}
         <div className="absolute inset-0">

@@ -6,11 +6,16 @@ import { motion } from 'motion/react';
 import { images } from '../components/constants/image';
 import { MyImage, MotionMyImage } from './ui/MyImage';
 import { useLocation } from "react-router-dom";
+import metaData from "../../metaData.js";
+import { normalizePath } from "../helpers/pathUtils";
+
+
 
 function CounterAnimation({ target, suffix = '', delay = 0 }: { target: number; suffix?: string; delay?: number }) {
   const [count, setCount] = useState(0);
   const [hasStarted, setHasStarted] = useState(false);
 
+  const metaTitle = metaData?.find((m: any) => m?.slug === normalizePath(window.location.pathname))?.meta_title;
   useEffect(() => {
     const startTimer = setTimeout(() => {
       setHasStarted(true);
@@ -217,12 +222,12 @@ export function AboutPage() {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white relative">
+              <h2 className="text-5xl md:text-7xl font-bold mb-6 text-white relative">
                 <span className="bg-gradient-to-r from-white via-accent to-white bg-clip-text text-transparent">
                   About Aspire Excel
                 </span>
 
-              </h1>
+              </h2>
             </motion.div>
 
             <motion.p
@@ -783,26 +788,61 @@ export function AboutPage() {
 
         {/* Market Presence Section */}
         <section className="mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <Card className="bg-gradient-to-br from-primary/5 to-accent/5 border-0 shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-3xl md:text-4xl text-primary text-center">
-                  Our Market Footprint
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-700 leading-relaxed text-lg text-center max-w-6xl mx-auto">
-                  Our domestic market forms the core of our operations, with strong presence across South India, Maharashtra, and Ludhiana. Aspire also caters to global clients, particularly in Indonesia and Bangladesh, with expansion plans aligned to economic conditions and customer demand.
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Image on left */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="relative order-1"
+            >
+              <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-4 md:p-6 lg:p-8">
+                <MyImage
+                  src={images.ourmarketfootprint}
+                  alt="Our Market Footprint - Aspire Excel Global Presence"
+                  className="w-full h-auto rounded-lg shadow-lg object-cover"
+                />
+              </div>
+            </motion.div>
+
+            {/* Text on right */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="order-2 p-2"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6 text-center lg:text-left">
+                Our Market Footprint
+              </h2>
+              <div className="space-y-4 text-gray-600 leading-relaxed text-base md:text-lg">
+                <p>
+                  Our domestic market forms the core of our operations, with strong presence across South India, Maharashtra, and Ludhiana.
                 </p>
-              </CardContent>
-            </Card>
-          </motion.div>
+                <p>
+                  Aspire also caters to global clients, particularly in Indonesia and Bangladesh, with expansion plans aligned to economic conditions and customer demand.
+                </p>
+              </div>
+
+              {/* Market highlights */}
+              <div className="mt-8 grid grid-cols-2 gap-4">
+                <div className="bg-primary/5 rounded-xl p-4 text-center">
+                  <Globe className="h-6 w-6 text-primary mx-auto mb-2" />
+                  <div className="font-bold text-primary text-lg">Domestic</div>
+                  <div className="text-sm text-gray-500">South India, Maharashtra, Ludhiana</div>
+                </div>
+                <div className="bg-accent/5 rounded-xl p-4 text-center">
+                  <Globe className="h-6 w-6 text-accent mx-auto mb-2" />
+                  <div className="font-bold text-accent text-lg">International</div>
+                  <div className="text-sm text-gray-500">Indonesia, Bangladesh</div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </section>
+
 
         {/* Company Story */}
         <section className="mb-20">

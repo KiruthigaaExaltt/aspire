@@ -17,6 +17,9 @@ import {
 } from 'lucide-react';
 
 import { MessageSquare } from 'lucide-react';
+import metaData from "../../metaData.js";
+import { normalizePath } from "../helpers/pathUtils";
+
 
 interface GalleryImage {
   id: string;
@@ -220,10 +223,15 @@ export function GalleryPage() {
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [selectedImage, filteredImages.length]);
-
+const metaTitle = metaData?.find((m: any) => m?.slug === normalizePath(window.location.pathname))?.meta_title;
   return (
     <div className="min-h-screen">
       {/* Header Section */}
+      {metaTitle ? (
+        <h1 className="visually-hidden">
+          {metaTitle}
+        </h1>
+      ) : null}
       <section
         className="relative pt-24 pb-8 sm:pt-32 sm:pb-12 md:pt-36 md:pb-16 lg:pt-40 lg:pb-20 bg-cover bg-center bg-no-repeat"
         style={{
@@ -234,7 +242,7 @@ export function GalleryPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/70 to-accent/60"></div>
 
         <div className="max-w-7xl mx-auto px-4 py-12 text-center relative z-10">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Gallery</h1>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Gallery</h2>
           <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-6xl mx-auto">
             A visual look at our products, installations, and performance—right from the shop floor to your ring frames.
           </p>

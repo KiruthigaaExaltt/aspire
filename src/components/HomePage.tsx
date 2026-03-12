@@ -6,6 +6,8 @@ import { CheckCircle, Cog, Users, Award, Zap, Clock, Wind, ArrowRight, Car, MapP
 import { images } from '../components/constants/image';
 import { MyImage } from './ui/MyImage';
 
+import metaData from "../../metaData.js";
+import { normalizePath } from "../helpers/pathUtils";
 interface HomePageProps { }
 
 export function HomePage({ }: HomePageProps) {
@@ -187,18 +189,23 @@ export function HomePage({ }: HomePageProps) {
     }
   ];
 
-
+const metaTitle = metaData?.find((m: any) => m?.slug === normalizePath(window.location.pathname))?.meta_title;
   return (
     <div className="min-h-screen">
       {/* Hero Carousel */}
+       {metaTitle ? (
+        <h1 className="visually-hidden">
+          {metaTitle}
+        </h1>
+      ) : null}
       <CarouselSection />
 
       {/* Welcome Section */}
       <section className="py-16 px-4 max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
             Welcome to our Aspire Excel
-          </h1>
+          </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-6xl mx-auto leading-relaxed">
             Leading manufacturer of innovative textile machinery and automation solutions.
             We specialize in cutting-edge technology that transforms textile production
@@ -226,7 +233,7 @@ export function HomePage({ }: HomePageProps) {
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {features.map((feature, index) => (
-            <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+            <Card key={index} className="text-center hover:shadow-lg transition-shadow border-[#0000001A]">
               <CardHeader>
                 <div className="flex justify-center mb-4">
                   {feature.icon}

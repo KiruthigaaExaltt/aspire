@@ -2,6 +2,8 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { Cog, Zap, Shield, Wrench } from 'lucide-react';
+import metaData from "../../metaData.js";
+import { normalizePath } from "../helpers/pathUtils";
 interface ProductPageProps {
   productIndex?: number;
 }
@@ -142,11 +144,17 @@ export function ProductPage({ productIndex = 0 }: ProductPageProps) {
   ];
 
   const currentProduct = products[productIndex];
-
+const metaTitle = metaData?.find((m: any) => m?.slug === normalizePath(window.location.pathname))?.meta_title;
   if (!currentProduct) {
     return (
+      
       <div className="min-h-screen py-16 px-4 max-w-7xl mx-auto text-center">
-        <h1 className="text-4xl font-bold text-primary mb-6">Product Not Found</h1>
+         {metaTitle ? (
+        <h1 className="visually-hidden">
+          {metaTitle}
+        </h1>
+      ) : null}
+        <h2 className="text-4xl font-bold text-primary mb-6">Product Not Found</h2>
         <p className="text-gray-600">The requested product could not be found.</p>
       </div>
     );
@@ -156,7 +164,7 @@ export function ProductPage({ productIndex = 0 }: ProductPageProps) {
     <div className="min-h-screen pt-24 pb-8 sm:pt-32 sm:pb-12 md:pt-36 md:pb-16 lg:py-10 px-4 max-w-7xl mx-auto" >
       {/* Header */}
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">{currentProduct.name}</h1>
+        <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">{currentProduct.name}</h2>
         <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
           {currentProduct.description}
         </p>

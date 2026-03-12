@@ -10,6 +10,8 @@ import {
 } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
+import metaData from "../../metaData.js";
+import { normalizePath } from "../helpers/pathUtils";
 
 import {
   Star,
@@ -423,10 +425,16 @@ export function ClientPage({ onNavigate }: ClientPageProps) {
       color: "from-orange-500 to-orange-600",
     },
   ];
+  const metaTitle = metaData?.find((m: any) => m?.slug === normalizePath(window.location.pathname))?.meta_title;
 
   return (
     <div className="from-background via-primary/5 to-accent/5 min-h-screen overflow-hidden bg-gradient-to-br">
       {/* Simplified Background Elements */}
+       {metaTitle ? (
+        <h1 className="visually-hidden">
+          {metaTitle}
+        </h1>
+      ) : null}
       <div className="pointer-events-none fixed inset-0">
         {STAR_POSITIONS.map((star, i) => (
           <motion.div
@@ -453,7 +461,7 @@ export function ClientPage({ onNavigate }: ClientPageProps) {
       {/* Hero Section with Parallax */}
       <motion.section
         ref={heroRef}
-        className="relative flex min-h-[500px] lg:min-h-[700px] xl:h-screen items-start lg:items-center justify-center overflow-hidden pt-24 pb-8 sm:pt-32 sm:pb-12 md:pt-36 md:pb-16 lg:pt-40 lg:pb-20"
+        className="relative flex min-h-[100px] xl:h-screen items-center justify-center overflow-hidden pb-8  sm:pb-12 md:pt-28 md:pb-16  lg:pb-20"
         style={{ y, opacity }}
       >
         {/* Hero Background with Gradients */}
@@ -509,7 +517,7 @@ export function ClientPage({ onNavigate }: ClientPageProps) {
                 </Badge>
               </motion.div>
 
-              <motion.h1
+              <motion.h2
                 className="mb-6 text-3xl font-bold sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl"
                 initial={{ opacity: 0, y: 50 }}
                 animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
@@ -526,7 +534,7 @@ export function ClientPage({ onNavigate }: ClientPageProps) {
                 >
                   Transforming Spinning Mills Worldwide
                 </motion.div>
-              </motion.h1>
+              </motion.h2>
 
               <motion.p
                 className="mb-8 text-xl leading-relaxed text-gray-600 md:text-2xl"

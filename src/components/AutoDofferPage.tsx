@@ -29,6 +29,10 @@ import {
 } from 'lucide-react';
 
 
+import metaData from "../../metaData.js";
+import { normalizePath } from "../helpers/pathUtils";
+
+
 export function AutoDofferPage() {
   const [activeTab, setActiveTab] = useState('overview');
   const [roiSpindles, setRoiSpindles] = useState(1200);
@@ -127,10 +131,16 @@ export function AutoDofferPage() {
       savings: "$38,000/year"
     }
   ];
+  const metaTitle = metaData?.find((m: any) => m?.slug === normalizePath(window.location.pathname))?.meta_title;
 
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section with Animated Elements */}
+       {metaTitle ? (
+        <h1 className="visually-hidden">
+          {metaTitle}
+        </h1>
+      ) : null}
       <section className="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-primary/90 to-accent/20 py-15 sm:py-20 md:py-25 lg:py-30">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
@@ -152,7 +162,7 @@ export function AutoDofferPage() {
                   Industry Leading
                 </Badge>
 
-                <motion.h1
+                <motion.h2
                   className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -160,7 +170,7 @@ export function AutoDofferPage() {
                 >
                   Auto Doffer
                   <span className="block text-accent">Retrofit</span>
-                </motion.h1>
+                </motion.h2>
 
                 <motion.p
                   className="text-lg sm:text-xl md:text-2xl text-white/90 leading-relaxed"

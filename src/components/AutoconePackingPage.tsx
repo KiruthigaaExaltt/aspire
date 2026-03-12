@@ -15,6 +15,8 @@ import { Separator } from "./ui/separator";
 import { images } from "../components/constants/image";
 import { MyImage } from "./ui/MyImage";
 import { cn } from './ui/utils';
+import metaData from "../../metaData.js";
+import { normalizePath } from "../helpers/pathUtils";
 import {
   Package,
   Clock,
@@ -47,6 +49,7 @@ export function AutoconePackingPage({ }: AutoconePackingPageProps) {
   const [roiCones, setRoiCones] = useState(10000);
   const [expandedFeature, setExpandedFeature] = useState<number | null>(null);
   const [isVisible, setIsVisible] = useState(true);
+  const metaTitle = metaData?.find((m: any) => m?.slug === normalizePath(window.location.pathname))?.meta_title;
 
   console.log("AutoconePackingPage rendered, activeTab:", isVisible);
 
@@ -243,10 +246,14 @@ export function AutoconePackingPage({ }: AutoconePackingPageProps) {
                   Industrial Grade
                 </Badge>
               </div>
-
-              <h1 className="mb-6 text-4xl font-bold md:text-5xl lg:text-6xl">
+          {metaTitle ? (
+        <h1 className="visually-hidden">
+          {metaTitle}
+        </h1>
+      ) : null}
+              <h2 className="mb-6 text-4xl font-bold md:text-5xl lg:text-6xl">
                 Autocone Packing System
-              </h1>
+              </h2>
 
               <p className="mb-8 text-xl leading-relaxed text-white/90 md:text-2xl">
                 State-of-the-art automated cone winding and packaging system

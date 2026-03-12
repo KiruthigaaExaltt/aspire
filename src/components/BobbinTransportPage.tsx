@@ -34,6 +34,8 @@ import {
 
 import { images } from '../components/constants/image';
 import { MyImage } from './ui/MyImage';
+import metaData from "../../metaData.js";
+import { normalizePath } from "../helpers/pathUtils";
 
 
 
@@ -180,11 +182,16 @@ export function BobbinTransportPage() {
       icon: <Target className="h-6 w-6" />
     }
   ];
-
+  const metaTitle = metaData?.find((m: any) => m?.slug === normalizePath(window.location.pathname))?.meta_title;
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary/95 via-primary/85 to-accent/75 text-white py-15 sm:py-20 md:py-25 lg:py-30 px-4 overflow-hidden">
+         {metaTitle ? (
+        <h1 className="visually-hidden">
+          {metaTitle}
+        </h1>
+      ) : null}
         {/* <div
           className="absolute inset-0 opacity-10"
           style={{
@@ -213,9 +220,9 @@ export function BobbinTransportPage() {
                 </Badge>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 Bobbin Transport System
-              </h1>
+              </h2>
 
               <p className="text-xl md:text-2xl mb-8 text-white/90 leading-relaxed">
                 Advanced automated bobbin handling and transport solution that streamlines
