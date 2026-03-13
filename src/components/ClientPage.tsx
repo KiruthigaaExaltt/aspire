@@ -430,7 +430,7 @@ export function ClientPage({ onNavigate }: ClientPageProps) {
   return (
     <div className="from-background via-primary/5 to-accent/5 min-h-screen overflow-hidden bg-gradient-to-br">
       {/* Simplified Background Elements */}
-       {metaTitle ? (
+      {metaTitle ? (
         <h1 className="visually-hidden">
           {metaTitle}
         </h1>
@@ -939,7 +939,7 @@ export function ClientPage({ onNavigate }: ClientPageProps) {
                 viewport={{ once: true }}
               >
                 {/* Decorative quote mark */}
-                <div className="bg-accent absolute -top-6 -left-6 flex h-16 w-16 items-center justify-center rounded-full shadow-xl">
+                <div className="bg-accent absolute -top-3 -left-3 flex h-12 w-12 items-center justify-center rounded-full shadow-xl">
                   <Quote className="h-8 w-8 text-white" />
                 </div>
 

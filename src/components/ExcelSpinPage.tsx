@@ -957,10 +957,10 @@ const metaTitle = metaData?.find((m: any) => m?.slug === normalizePath(window.lo
                         ].map((item, index) => (
                           <div
                             key={index}
-                            className="flex items-center justify-between rounded-lg bg-green-50 p-3"
+                            className="flex flex-wrap items-center justify-between gap-2 rounded-lg bg-green-50 p-3"
                           >
-                            <span className="font-medium">{item.property}</span>
-                            <Badge className="bg-green-500 text-white">
+                            <span className="min-w-0 font-medium">{item.property}</span>
+                            <Badge className="flex-shrink-0 bg-green-500 text-white">
                               {item.improvement}
                             </Badge>
                           </div>
@@ -1008,7 +1008,7 @@ const metaTitle = metaData?.find((m: any) => m?.slug === normalizePath(window.lo
                     <CardContent>
                       <div className="grid grid-cols-2 gap-4 text-center">
                         <div className="rounded-lg bg-blue-50 p-3">
-                          <div className="text-2xl font-bold text-blue-600">
+                          <div className="text-lg sm:text-2xl font-bold text-blue-600">
                             15-20%
                           </div>
                           <div className="text-sm text-gray-600">
@@ -1016,7 +1016,7 @@ const metaTitle = metaData?.find((m: any) => m?.slug === normalizePath(window.lo
                           </div>
                         </div>
                         <div className="rounded-lg bg-purple-50 p-3">
-                          <div className="text-2xl font-bold text-purple-600">
+                          <div className="text-lg sm:text-2xl font-bold text-purple-600">
                             6-8 months
                           </div>
                           <div className="text-sm text-gray-600">
@@ -1095,7 +1095,7 @@ const metaTitle = metaData?.find((m: any) => m?.slug === normalizePath(window.lo
               </Card>
 
               {/* Results */}
-              <Card>
+              <Card className="border-[#0000001A]">
                 <CardHeader>
                   <CardTitle>Expected Improvements</CardTitle>
                   <CardDescription>
@@ -1129,7 +1129,7 @@ const metaTitle = metaData?.find((m: any) => m?.slug === normalizePath(window.lo
                     ].map((improvement, index) => (
                       <div
                         key={index}
-                        className="flex items-center justify-between rounded-lg border p-4"
+                        className="flex items-center justify-between rounded-lg border border-[#0000001A] p-4"
                       >
                         <div className="flex items-center">
                           <div

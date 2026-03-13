@@ -223,11 +223,11 @@ export function AutoParkingSystemPage() {
           className={`fixed inset-0 bg-gradient-to-br from-primary via-primary/90 to-accent/20 z-50 flex items-center justify-center ${isLoaded ? 'pointer-events-none' : ''}`}
         >
           <div className="text-center">
-             {metaTitle ? (
-        <h1 className="visually-hidden">
-          {metaTitle}
-        </h1>
-      ) : null}
+            {metaTitle ? (
+              <h1 className="visually-hidden">
+                {metaTitle}
+              </h1>
+            ) : null}
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
@@ -1585,7 +1585,7 @@ export function AutoParkingSystemPage() {
                   Get a customized parking solution designed for your specific needs. Our experts will assess your space and recommend the best system.
                 </p>
 
-                <div className="space-y-6">
+                <div className="space-y-6 w-auto">
                   {[
                     { icon: <Phone className="h-6 w-6" />, title: 'Call Us', value: '+91 90871 02929', href: 'tel:+919087102929' },
                     { icon: <Mail className="h-6 w-6" />, title: 'Email Us', value: 'aspiregrandexcel@gmail.com', href: 'mailto:aspiregrandexcel@gmail.com' },
@@ -1602,9 +1602,35 @@ export function AutoParkingSystemPage() {
                     </a>
                   ))}
                 </div>
+                {/* <div className="space-y-4 sm:space-y-6">
+                  {[
+                    { icon: <Phone className="h-5 w-5 sm:h-6 sm:w-6" />, title: 'Call Us', value: '+91 90871 02929', href: 'tel:+919087102929' },
+                    { icon: <Mail className="h-5 w-5 sm:h-6 sm:w-6" />, title: 'Email Us', value: 'aspiregrandexcel@gmail.com', href: 'mailto:aspiregrandexcel@gmail.com' },
+                    { icon: <MapPin className="h-5 w-5 sm:h-6 sm:w-6" />, title: 'Visit Us', value: '111/109A, Civil Aerodrome Road\nSIHS Colony, Singanallur\nCoimbatore-641014', href: 'https://maps.app.goo.gl/2vZaKTHTMZdUWAeV6' }
+                  ].map((contact) => (
+                    <a
+                      key={contact.title}
+                      href={contact.href}
+                      target={contact.title === 'Visit Us' ? '_blank' : undefined}
+                      rel={contact.title === 'Visit Us' ? 'noopener noreferrer' : undefined}
+                      className="flex items-start gap-2 sm:gap-4 p-3 sm:p-4 rounded-2xl bg-[#161243]/[0.45] backdrop-blur-[0.2px] hover:bg-[#161243]/[0.55] border border-[#161243]/[0.24] shadow-[0_4px_30px_rgba(0,0,0,0.1)] transition-all duration-300 group cursor-pointer w-full overflow-hidden"
+                    >
+                      <div className="text-accent bg-white/20 p-2 sm:p-3 rounded-xl group-hover:scale-110 transition-transform duration-300 shrink-0">
+                        {contact.icon}
+                      </div>
+
+                      <div className="flex-1 min-w-0">
+                        <p className="font-bold text-base sm:text-lg">{contact.title}</p>
+                        <p className="opacity-90 whitespace-pre-line break-words text-sm sm:text-base group-hover:text-accent transition-colors">
+                          {contact.value}
+                        </p>
+                      </div>
+                    </a>
+                  ))}
+                </div> */}
               </div>
 
-              <div className="text-center">
+              <div className="text-center w-auto">
                 <div className="bg-[#2d2a4a] rounded-2xl p-10 shadow-2xl relative overflow-hidden">
                   <div className="relative z-10">
                     <h3 className="text-3xl font-bold mb-8 text-white text-center">Get Your Quote</h3>
