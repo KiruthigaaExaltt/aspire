@@ -779,7 +779,7 @@ export function BobbinTransportPage() {
 
       {/* Call to Action Section */}
       <section className="py-16 px-4 bg-gradient-to-r from-primary to-accent text-white">
-        <div className="max-w-7xl mx-auto px-4 py-16">
+        <div className="mx-auto max-w-6xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Transform Your Bobbin Handling?
           </h2>
@@ -787,18 +787,6 @@ export function BobbinTransportPage() {
             Join leading textile manufacturers who have revolutionized their production
             with our automated bobbin transport systems.
           </p>
-
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/contact/">
-              <Button
-                size="lg"
-                className="bg-white text-primary hover:bg-gray-100 px-8 py-4 text-lg font-semibold"
-              >
-                <Phone className="h-5 w-5 mr-2" />
-                Contact Us
-              </Button>
-            </Link>
-          </div>
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>

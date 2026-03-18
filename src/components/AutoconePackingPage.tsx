@@ -246,11 +246,11 @@ export function AutoconePackingPage({ }: AutoconePackingPageProps) {
                   Industrial Grade
                 </Badge>
               </div>
-          {metaTitle ? (
-        <h1 className="visually-hidden">
-          {metaTitle}
-        </h1>
-      ) : null}
+              {metaTitle ? (
+                <h1 className="visually-hidden">
+                  {metaTitle}
+                </h1>
+              ) : null}
               <h2 className="mb-6 text-4xl font-bold md:text-5xl lg:text-6xl">
                 Autocone Packing System
               </h2>
@@ -895,18 +895,6 @@ export function AutoconePackingPage({ }: AutoconePackingPageProps) {
             Join leading textile manufacturers who have transformed their
             packaging operations with our automated autocone packing systems.
           </p>
-
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/contact/">
-              <Button
-                size="lg"
-                className="text-primary bg-white px-8 py-4 text-lg font-semibold hover:bg-gray-100"
-              >
-                <Phone className="mr-2 h-5 w-5" />
-                Contact Us
-              </Button>
-            </Link>
-          </div>
 
           <div className="mt-12 grid grid-cols-1 gap-8 text-center md:grid-cols-3">
             <div>

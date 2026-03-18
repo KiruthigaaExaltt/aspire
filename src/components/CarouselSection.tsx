@@ -223,7 +223,7 @@ const metaTitle = metaData?.find((m: any) => m?.slug === normalizePath(window.lo
                 </p>
 
                 {/* Read More Link from Screenshot */}
-                <div className="pt-2" style={{ transitionDelay: '900ms' }}>
+                {/* <div className="pt-2" style={{ transitionDelay: '900ms' }}>
                   <button 
                     onClick={() => {
                       const slideRouteMap: { [key: number]: string } = {
@@ -240,7 +240,7 @@ const metaTitle = metaData?.find((m: any) => m?.slug === normalizePath(window.lo
                   >
                     Read More
                   </button>
-                </div>
+                </div> */}
 
 
                 {/* Stats Grid */}
