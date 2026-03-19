@@ -480,7 +480,7 @@ export function BobbinTransportPage() {
                   >
                     <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer border-[#0000001A]"
                       onClick={() => setExpandedFeature(expandedFeature === index ? null : index)}>
-                      <CardHeader>
+                      <CardHeader className="px-6 py-6">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center">
                             <div className="p-3 bg-primary/10 rounded-lg text-primary mr-4">
@@ -564,7 +564,7 @@ export function BobbinTransportPage() {
                   <Card key={index} className="hover:shadow-lg transition-shadow border-[#0000001A]">
                     <CardHeader>
                       <div className="flex items-center justify-between">
-                        <CardTitle className="text-primary">{service.title}</CardTitle>
+                        <CardTitle className="!leading-normal text-primary">{service.title}</CardTitle>
                         <Badge variant="outline">{service.duration}</Badge>
                       </div>
                       <CardDescription>{service.description}</CardDescription>

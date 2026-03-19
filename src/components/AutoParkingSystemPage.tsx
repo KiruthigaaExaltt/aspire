@@ -56,39 +56,6 @@ export function AutoParkingSystemPage() {
     { title: 'Retrieve Easy', description: 'Quick retrieval with bidirectional movement', icon: <Timer className="h-6 w-6" /> }
   ];
 
-  // const keyBenefits = [
-  //   {
-  //     title: 'SMART OPERATION',
-  //     description: 'Fully automated, controlled by a touch panel or mobile app',
-  //     icon: <Settings className="h-6 w-6" />,
-  //     gradient: 'from-blue-500 to-purple-600'
-  //   },
-  //   {
-  //     title: 'BIDIRECTIONAL MOVEMENT',
-  //     description: 'Rotates both ways for quick car retrieval',
-  //     icon: <RotateCcw className="h-6 w-6" />,
-  //     gradient: 'from-green-500 to-teal-600'
-  //   },
-  //   {
-  //     title: 'SAFETY FIRST',
-  //     description: 'Sensors, emergency stop',
-  //     icon: <Shield className="h-6 w-6" />,
-  //     gradient: 'from-red-500 to-pink-600'
-  //   },
-  //   {
-  //     title: 'MANUAL BACKUP',
-  //     description: 'Retrieve cars even during power failure',
-  //     icon: <Zap className="h-6 w-6" />,
-  //     gradient: 'from-yellow-500 to-orange-600'
-  //   },
-  //   {
-  //     title: 'CUSTOMIZABLE',
-  //     description: 'Options like ANPR cameras, boom barriers, roof covers, automatic door safety guard',
-  //     icon: <Wrench className="h-6 w-6" />,
-  //     gradient: 'from-indigo-500 to-blue-600'
-  //   }
-  // ];
-
   const rotaryModels = [
     { cars: 8, sedan: '10550', suv: '11350', popular: false },
     { cars: 10, sedan: '12500', suv: '13500', popular: false },
@@ -110,17 +77,6 @@ export function AutoParkingSystemPage() {
     }
   }, [parkingSteps.length]);
 
-  // Auto-cycle through features
-  // useEffect(() => {
-  //   try {
-  //     const interval = setInterval(() => {
-  //       setActiveFeature((prev) => (prev + 1) % keyBenefits.length);
-  //     }, 4000);
-  //     return () => clearInterval(interval);
-  //   } catch (error) {
-  //     console.warn('Error setting up features interval:', error);
-  //   }
-  // }, [keyBenefits.length]);
 
   // Mouse tracking for interactive effects
   useEffect(() => {
@@ -215,40 +171,11 @@ export function AutoParkingSystemPage() {
         transition={{ duration: 0.8 }}
         className="min-h-screen bg-background relative overflow-hidden"
       >
-        {/* Creative Loading Overlay */}
-        <motion.div
-          initial={{ opacity: 1 }}
-          animate={{ opacity: isLoaded ? 0 : 1 }}
-          transition={{ duration: 0.5 }}
-          className={`fixed inset-0 bg-gradient-to-br from-primary via-primary/90 to-accent/20 z-50 flex items-center justify-center ${isLoaded ? 'pointer-events-none' : ''}`}
-        >
-          <div className="text-center">
-            {metaTitle ? (
-              <h1 className="visually-hidden">
-                {metaTitle}
-              </h1>
-            ) : null}
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-              className="w-20 h-20 border-4 border-white/20 border-t-accent rounded-full mx-auto mb-8"
-            />
-            <motion.h2
-              animate={{ opacity: [0.5, 1, 0.5] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="text-2xl font-bold text-white"
-            >
-              Aspire Excel Auto Parking Systems
-            </motion.h2>
-            <motion.p
-              animate={{ opacity: [0.3, 0.8, 0.3] }}
-              transition={{ duration: 1.5, repeat: Infinity, delay: 0.5 }}
-              className="text-white/80 mt-2"
-            >
-              Revolutionizing Urban Parking Solutions
-            </motion.p>
-          </div>
-        </motion.div>
+        {metaTitle ? (
+          <h1 className="visually-hidden">
+            {metaTitle}
+          </h1>
+        ) : null}
 
         {/* Scroll Progress Indicator */}
         <motion.div
@@ -717,7 +644,7 @@ export function AutoParkingSystemPage() {
         </section>
 
         {/* How It Works Section */}
-        <section id="how-it-works" className="py-20 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
+        <section id="how-it-works" className="py-10 md:py-20 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
           {/* Animated Background Elements */}
           <motion.div
             animate={{ rotate: 360 }}
@@ -863,24 +790,6 @@ export function AutoParkingSystemPage() {
 
         {/* Applications with Animated Cards */}
         <section className="py-20 bg-gradient-to-br from-white to-gray-50 relative overflow-hidden">
-          {/* Floating Background Elements */}
-          <motion.div
-            animate={{
-              y: [0, -20, 0],
-              opacity: [0.3, 0.1, 0.3]
-            }}
-            transition={{ duration: 6, repeat: Infinity }}
-            className="absolute top-20 right-20 w-32 h-32 bg-primary/5 rounded-full blur-xl"
-          ></motion.div>
-          <motion.div
-            animate={{
-              y: [0, 20, 0],
-              opacity: [0.2, 0.5, 0.2]
-            }}
-            transition={{ duration: 8, repeat: Infinity, delay: 2 }}
-            className="absolute bottom-20 left-20 w-40 h-40 bg-accent/5 rounded-full blur-xl"
-          ></motion.div>
-
           <div className="max-w-7xl mx-auto px-4 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -1120,12 +1029,7 @@ export function AutoParkingSystemPage() {
 
         {/* Rotary Parking System Section */}
         <section id="rotary" className="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white relative overflow-hidden">
-          {/* Animated Background */}
-          <div className="absolute inset-0">
-            <div className="fixed inset-x-0 top-0 bottom-0 w-screen h-full bg-white z-[-1] left-0 right-0"></div>
-          </div>
-
-          <div className="max-w-7xl mx-auto px-4 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
             {/* Rotary Parking System Overview */}
             <div className="text-center mb-16">
               <Badge className="mb-4 bg-accent/10 text-accent border-accent/20">Featured Product</Badge>
@@ -1174,7 +1078,7 @@ export function AutoParkingSystemPage() {
             </div>
 
             {/* System Capacity & Models */}
-            <div className="bg-[#161243]/[0.45] backdrop-blur-[0.2px] rounded-3xl p-8 mb-20 border border-[#161243]/[0.24] shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
+            <div className="bg-[#161243]/[0.45] backdrop-blur-[0.2px] rounded-3xl p-8 mb:0 md:mb-20 border border-[#161243]/[0.24] shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
               <div className="text-center mb-8">
                 <h3 className="text-3xl font-bold text-white mb-4">Available Configurations</h3>
                 <p className="text-white/80 text-lg">Choose the perfect capacity for your space requirements</p>
@@ -1199,7 +1103,7 @@ export function AutoParkingSystemPage() {
               </div>
             </div>
 
-            <div className="space-y-8 py-20">
+            <div className="space-y-8 mb:0 md:py-20">
               {/* First Row: Two Column Grid */}
               <div className="grid lg:grid-cols-2 gap-16 items-start">
                 <div className="space-y-8">
@@ -1248,7 +1152,7 @@ export function AutoParkingSystemPage() {
               </div>
 
               {/* Second Row: Full Width Specifications */}
-              <div className="relative bg-white shadow-2xl border-y border-gray-200 py-16 px-4 mb-0" style={{ width: '100vw', marginLeft: 'calc(50% - 50vw)', marginRight: 'calc(50% - 50vw)', marginBottom: '0', paddingBottom: '4rem' }}>
+              {/* <div className="relative bg-white shadow-2xl border-y border-gray-200 py-16 px-4 mb-0" style={{ width: '100vw', marginLeft: 'calc(50% - 50vw)', marginRight: 'calc(50% - 50vw)', marginBottom: '0', paddingBottom: '4rem' }}>
                 <div className="max-w-5xl mx-auto">
                   <div className="text-center mb-8">
                     <h3 className="text-3xl font-bold text-primary mb-3">Working Space Specifications</h3>
@@ -1281,10 +1185,45 @@ export function AutoParkingSystemPage() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
+
+        <div className="relative bg-white shadow-2xl border-y border-gray-200 py-16 px-4 mb-0" style={{ width: '100vw', marginLeft: 'calc(50% - 50vw)', marginRight: 'calc(50% - 50vw)', marginBottom: '0', paddingBottom: '4rem' }}>
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-bold text-primary mb-3">Working Space Specifications</h3>
+              <div className="w-24 h-0.5 bg-gradient-to-r from-accent to-primary mx-auto"></div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center max-w-6xl mx-auto">
+              <div className="group">
+                <div className="bg-gradient-to-br from-accent/10 to-accent/20 p-8 rounded-2xl hover:from-accent/20 hover:to-accent/30 transition-all duration-300 hover:scale-105 h-64 border border-accent/20 shadow-lg">
+                  <Maximize className="h-14 w-14 text-accent mx-auto mb-5" />
+                  <p className="font-medium text-gray-600 mb-4 text-lg">Working Space Length</p>
+                  <p className="text-4xl font-bold text-accent mb-3">6650 x 5100</p>
+                  <p className="text-base text-gray-500 font-medium">millimeters</p>
+                </div>
+              </div>
+              <div className="group">
+                <div className="bg-gradient-to-br from-primary/10 to-primary/20 p-8 rounded-2xl hover:from-primary/20 hover:to-primary/30 transition-all duration-300 hover:scale-105 h-64 border border-primary/20 shadow-lg">
+                  <Car className="h-14 w-14 text-primary mx-auto mb-5" />
+                  <p className="font-medium text-gray-600 mb-4 text-lg">Allowable Car Length</p>
+                  <p className="text-4xl font-bold text-primary mb-3">5000</p>
+                  <p className="text-base text-gray-500 font-medium">millimeters</p>
+                </div>
+              </div>
+              <div className="group">
+                <div className="bg-gradient-to-br from-destructive/10 to-destructive/20 p-8 rounded-2xl hover:from-destructive/20 hover:to-destructive/30 transition-all duration-300 hover:scale-105 h-64 border border-destructive/20 shadow-lg">
+                  <Gauge className="h-14 w-14 text-destructive mx-auto mb-5" />
+                  <p className="font-medium text-gray-600 mb-4 text-lg">Allowable Car Width</p>
+                  <p className="text-4xl font-bold text-destructive mb-3">2000</p>
+                  <p className="text-base text-gray-500 font-medium">millimeters</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
 
 
@@ -1361,7 +1300,7 @@ export function AutoParkingSystemPage() {
             </div>
 
             {/* System Capacity & Models */}
-            <div className="bg-[#161243]/[0.45] backdrop-blur-[0.2px] rounded-3xl p-8 mb-20 border border-[#161243]/[0.24] shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
+            <div className="bg-[#161243]/[0.45] backdrop-blur-[0.2px] rounded-3xl p-8 mb:0 md:mb-20 border border-[#161243]/[0.24] shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
               <div className="text-center mb-8">
                 <h3 className="text-3xl font-bold text-white mb-4">Available Configurations</h3>
                 <p className="text-white/80 text-lg">Scalable solutions for residential and commercial applications</p>
@@ -1420,7 +1359,7 @@ export function AutoParkingSystemPage() {
             </div>
 
             {/* Tower System Features Grid */}
-            <div className="grid md:grid-cols-3 gap-8 mb-20">
+            <div className="grid md:grid-cols-3 gap-8 my-20">
               {[
                 {
                   icon: <Building className="h-12 w-12" />,
@@ -1458,7 +1397,7 @@ export function AutoParkingSystemPage() {
             </div>
 
             {/* System Capacity & Models */}
-            <div className="bg-[#161243]/[0.45] backdrop-blur-[0.2px] rounded-3xl p-8 mb-20 border border-[#161243]/[0.24] shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
+            <div className="bg-[#161243]/[0.45] backdrop-blur-[0.2px] rounded-3xl p-8 mb:0 md:mb-20 border border-[#161243]/[0.24] shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
               <div className="text-center mb-8">
                 <h3 className="text-3xl font-bold text-white mb-4">Available Configurations</h3>
                 <p className="text-white/80 text-lg">Enterprise-grade solutions for maximum density and throughput</p>

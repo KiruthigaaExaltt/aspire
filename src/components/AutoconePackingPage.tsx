@@ -536,14 +536,14 @@ export function AutoconePackingPage({ }: AutoconePackingPageProps) {
                         )
                       }
                     >
-                      <CardHeader>
+                      <CardHeader className="px-6 py-6">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center">
                             <div className="bg-primary/10 text-primary mr-4 rounded-lg p-3">
                               {feature.icon}
                             </div>
                             <div>
-                              <CardTitle className="text-primary">
+                              <CardTitle className="!leading-normal text-primary">
                                 {feature.title}
                               </CardTitle>
                               <CardDescription>

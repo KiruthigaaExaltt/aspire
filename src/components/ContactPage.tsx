@@ -1,12 +1,15 @@
 import { useState } from 'react';
+import { toast } from 'sonner';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import PhoneNumberField from './PhoneNumberField';
-   import metaData from "../../metaData.js";
+import metaData from "../../metaData.js";
 import { normalizePath } from "../helpers/pathUtils";
+import sendEmail from "../helpers/sendEmail";
+import { isValidPhoneNumber } from "react-phone-number-input";
 
 export function ContactPage() {
   const [formData, setFormData] = useState({
@@ -18,6 +21,7 @@ export function ContactPage() {
     message: ''
   });
   const [phoneError, setPhoneError] = useState<string | null>(null);
+  const [isSendingMail, setIsSendingMail] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -34,25 +38,121 @@ export function ContactPage() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log(formData);
 
     if (phoneError) {
-      alert('Please fix the errors in the form before submitting.');
+      toast("❌ Please fix the errors in the form before submitting.");
       return;
     }
 
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      phone: '',
-      subject: '',
-      message: ''
-    });
+    if (
+      `${formData.name}`?.trim()?.length < 1 ||
+      `${formData.email}`?.trim()?.length < 1 ||
+      `${formData?.phone}`?.trim()?.length < 1 ||
+      `${formData.subject}`?.trim()?.length < 1 ||
+      `${formData.message}`?.trim()?.length < 1
+    ) {
+      toast("❌ Kindly fill in all required fields.");
+      return;
+    }
+    if (isValidPhoneNumber(formData?.phone.trim()) === false) {
+      toast("❌ Kindly enter a valid phone number.");
+      return;
+    }
+
+    if (!formData.email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)) {
+      toast("❌ Kindly enter a valid email address.");
+      return;
+    }
+
+    setIsSendingMail(true);
+
+    const templateParams = {
+      username: import.meta.env?.VITE_USERNAME ?? "",
+      password: import.meta.env?.VITE_PASSWORD ?? "",
+      templateCode: import.meta.env?.VITE_TEMPLATE_CODE ?? "",
+      to: [
+        import.meta.env?.VITE_SENDER_EMAIL_ONE ?? "",
+        import.meta.env?.VITE_SENDER_EMAIL_TWO ?? "",
+        import.meta.env?.VITE_SENDER_EMAIL ?? ""
+      ].filter(email => email !== ""),
+      placeholders: {
+        from_name: formData.name,
+        to_name: import.meta.env?.VITE_SENDER_NAME ?? "",
+        message: `
+          Name: ${formData.name} <br/>
+          Email: ${formData.email} <br/>
+          ${formData.company ? `Company: ${formData.company} <br/>` : ''}
+          ${formData.phone ? `Phone: ${formData.phone} <br/>` : ''}
+          Subject: ${formData.subject} <br/>
+          Message: <br/>${formData.message}
+        `,
+      },
+    };
+    const replyTemplateParams = {
+      username: import.meta.env?.VITE_USERNAME ?? "",
+      password: import.meta.env?.VITE_PASSWORD ?? "",
+      templateCode: import.meta.env?.VITE_REPLY_TEMPLATE_CODE ?? "",
+      to: [formData?.email ?? ""],
+      placeholders: {
+        to_name: formData?.name ?? "",
+      },
+    };
+
+    let emailSent = false;
+
+    try {
+      const responseOne = await sendEmail(templateParams);
+      console.log(responseOne);
+      if (
+        responseOne?.status === "error" ||
+        responseOne?.data?.status === "failed"
+      ) {
+        emailSent = false;
+        setIsSendingMail(false);
+        toast("❌ Failed to send enquiry. Try again later.");
+      } else {
+        emailSent = true;
+      }
+    } catch (err) {
+      console.error(err);
+      emailSent = false;
+      setIsSendingMail(false);
+      toast("❌ Failed to send enquiry. Try again later.");
+    }
+
+    if (emailSent) {
+      try {
+        const responseTwo = await sendEmail(replyTemplateParams);
+        console.log(responseTwo);
+        if (
+          responseTwo?.status === "error" ||
+          responseTwo?.data?.status === "failed"
+        ) {
+          setIsSendingMail(false);
+          toast("❌ Failed to send enquiry. Try again later.");
+        } else {
+          setIsSendingMail(false);
+          setFormData({
+            name: '',
+            email: '',
+            company: '',
+            phone: '',
+            subject: '',
+            message: ''
+          });
+          toast.success(
+            "Message sent successfully. Thank you for reaching out. We’ll get back to you shortly.",
+          );
+        }
+      } catch (err) {
+        console.error(err);
+        setIsSendingMail(false);
+        toast("❌ Failed to send enquiry. Try again later.");
+      }
+    }
   };
 
   const offices = [
@@ -185,8 +285,8 @@ export function ContactPage() {
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full bg-[#202058] hover:bg-[#202058]/90 text-white rounded-lg h-10">
-                  Send Message
+                <Button type="submit" size="lg" disabled={isSendingMail} className="w-full bg-[#202058] hover:bg-[#202058]/90 text-white rounded-lg h-10">
+                  {isSendingMail ? 'Sending...' : 'Send Message'}
                 </Button>
               </form>
             </CardContent>
