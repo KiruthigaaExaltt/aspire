@@ -1,5 +1,6 @@
 import React, { Suspense, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation, Link } from 'react-router-dom';
+import { Toaster } from 'sonner';
 import { Header } from './components/Header';
 import { HomePage } from './components/HomePage';
 import { AboutPage } from './components/AboutPage';
@@ -32,27 +33,6 @@ function ScrollToTop() {
 
   return null;
 }
-
-// Error Boundary Component
-// function ErrorPage() {
-//   return (
-//     <div className="min-h-screen flex items-center justify-center">
-//       <div className="text-center">
-//         <h2 className="text-2xl font-bold text-primary mb-4">Something went wrong</h2>
-//         <p className="text-gray-600 mb-4">We're experiencing technical difficulties.</p>
-//         <Link
-//           to="/"
-//           className="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 inline-block"
-//         >
-//           Return to Home
-//         </Link>
-//       </div>
-//     </div>
-//   );
-// }
-
-
-
 // Navigation wrapper component
 function NavigationWrapper({ children }: { children: React.ReactNode }) {
   return (
@@ -251,6 +231,7 @@ export default function App() {
 
   return (
     <Router>
+      <Toaster position="bottom-right" richColors />
       <ScrollToTop />
       <MetaTags />
       <Routes>

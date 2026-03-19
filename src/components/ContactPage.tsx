@@ -48,15 +48,17 @@ export function ContactPage() {
     }
 
     if (
-      `${formData.name}`?.trim()?.length < 1 ||
-      `${formData.email}`?.trim()?.length < 1 ||
-      `${formData?.phone}`?.trim()?.length < 1 ||
-      `${formData.subject}`?.trim()?.length < 1 ||
-      `${formData.message}`?.trim()?.length < 1
+      !formData.name?.trim() ||
+      !formData.email?.trim() ||
+      !formData.company?.trim() ||
+      !formData.phone?.trim() ||
+      !formData.subject?.trim() ||
+      !formData.message?.trim()
     ) {
       toast("❌ Kindly fill in all required fields.");
       return;
     }
+
     if (isValidPhoneNumber(formData?.phone.trim()) === false) {
       toast("❌ Kindly enter a valid phone number.");
       return;
@@ -229,7 +231,7 @@ export function ContactPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="company" className="block text-xs font-semibold text-gray-700 mb-2">
-                      Company Name
+                      Company Name *
                     </label>
                     <Input
                       id="company"
@@ -243,7 +245,7 @@ export function ContactPage() {
                   </div>
                   <div>
                     <label htmlFor="phone" className="block text-xs font-semibold text-gray-700 mb-2">
-                      Phone Number
+                      Phone Number *
                     </label>
                     <PhoneNumberField
                       value={formData.phone}
