@@ -172,7 +172,7 @@ export function ContactPage() {
   return (
     <div className="min-h-screen py-16 px-4 max-w-7xl mx-auto">
       {/* Header */}
-    {metaTitle ? (
+      {metaTitle ? (
         <h1 className="visually-hidden">
           {metaTitle}
         </h1>
